@@ -1,0 +1,15 @@
+.dashboard{
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.dashTile{
+    margin-bottom: 5px;
+}
+
+.dashButton{
+    min-width: 200px;
+}

@@ -7,7 +7,14 @@ import NavBar from './components/NavBar/index.js';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
+import Role from './components/Role';
+import Company from './components/Company';
+import Contact from './components/Contact';
+import Contract from './components/Contract';
+import Dashboard from './components/Dashboard';
 import { authenticate } from './store/session';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -41,7 +48,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
+          <Dashboard/>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>
