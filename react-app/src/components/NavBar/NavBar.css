@@ -1,0 +1,42 @@
+.navBar {
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+
+}
+
+.navList{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    text-decoration: none;
+    /* padding: 20px; */
+ 
+}
+
+.navLink{
+    color: white;
+}
+
+.navLink:link {
+    text-decoration: none;
+}
+
+
+.navLink:visited {
+    text-decoration: none;
+}
+
+
+.navLink:hover {
+    text-decoration: none;
+}
+
+
+.navLink:active {
+    text-decoration: none;
+}

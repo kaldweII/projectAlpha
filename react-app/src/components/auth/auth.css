@@ -1,0 +1,17 @@
+.loginForm {
+     background-color: lightgrey;  
+ backdrop-filter: blur(5px);
+margin: auto;    
+display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    min-height: 280px;
+    max-width: 380px;
+    border-radius: 5px;
+
+}
+
+.formInput{
+    outline: none;}
