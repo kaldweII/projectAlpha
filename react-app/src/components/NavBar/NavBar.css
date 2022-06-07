@@ -1,5 +1,5 @@
 .navBar {
-    background-color: #e9ae00;
+    background-color: #306d93;
 
 }
 
@@ -36,4 +36,8 @@
 
 .navLink:active {
     text-decoration: none;
+}
+
+.navLink:hover{
+    color: #fcec83;
 }

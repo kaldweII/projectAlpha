@@ -11,6 +11,7 @@ import Role from './components/Role';
 import Company from './components/Company';
 import Contact from './components/Contact';
 import Contract from './components/Contract';
+import LoginPage from './components/LoginPage';
 import Dashboard from './components/Dashboard';
 import { authenticate } from './store/session';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,7 +37,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route path='/login' exact={true}>
-          <LoginForm />
+          <LoginPage />
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />

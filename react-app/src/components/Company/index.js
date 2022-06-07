@@ -10,7 +10,7 @@ function Company() {
 
     return (
         <div className="dashTile">
-            <Button className="dashButton" variant="primary" onClick={handleShow}>
+            <Button className="dashButton" variant="success" onClick={handleShow}>
                 Manage Companies
             </Button>
 
