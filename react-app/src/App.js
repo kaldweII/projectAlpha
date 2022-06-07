@@ -17,6 +17,7 @@ import { authenticate } from './store/session';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();

@@ -3,6 +3,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import './NavBar.css'
+import { HouseFill, PeopleFill } from 'react-bootstrap-icons';
+
+
 
 const NavBar = () => {
   return (
@@ -10,22 +13,23 @@ const NavBar = () => {
       <ul className='navList'>
         <li>
           <NavLink className='navLink' to='/' exact={true} activeClassName='active'>
-            Home
+            <HouseFill />
+
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink className='navLink' to='/login' exact={true} activeClassName='active'>
             Login
           </NavLink>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <NavLink className='navLink' to='/sign-up' exact={true} activeClassName='active'>
             Sign Up
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink className='navLink' to='/users' exact={true} activeClassName='active'>
-            Users
+            <PeopleFill/>
           </NavLink>
         </li>
         <li>
