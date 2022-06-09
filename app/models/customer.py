@@ -7,6 +7,7 @@ class Customer(db.Model, UserMixin):
     __tablename__ = 'customers'
 
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), nullable=True, unique=True)
     alias = db.Column(db.String(255), nullable=True, unique=True)
     address = db.Column(db.String(255), nullable=False, unique=False)
     suite = db.Column(db.String(255), nullable=True)
@@ -23,7 +24,7 @@ class Customer(db.Model, UserMixin):
     industry = db.Column(db.String(255), nullable=False)
     db_num = db.Column(db.String(255), nullable=True)
     invoice_email = db.Column(db.String(255), nullable=False)
-    main_contact_id = db.Column(db.Integer, db.ForeignKey("contact.id"), nullable=True)
+    main_contact_id = db.Column(db.Integer, db.ForeignKey("contacts.id"), nullable=True)
     created_at = db.Column(db.DateTime, server_default=func.now())
     updated_at = db.Column(db.DateTime, onupdate=func.now())
 
