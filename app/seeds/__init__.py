@@ -22,6 +22,6 @@ def seed():
 @seed_commands.command('undo')
 def undo():
     undo_users(),
-    undo_contacts()
+    undo_contacts(),
     undo_customers
     # Add other undo functions here

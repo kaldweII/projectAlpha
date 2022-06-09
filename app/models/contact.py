@@ -4,7 +4,7 @@ from sqlalchemy.sql import func
 
 
 class Contact(db.Model, UserMixin):
-    __tablename__ = 'contact'
+    __tablename__ = 'contacts'
 
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(255), nullable=True, unique=False)
