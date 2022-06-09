@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 
 
-function Company() {
+function Customer() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -21,10 +21,10 @@ function Company() {
                 <Modal.Body>
                     <Form>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label> Add Company</Form.Label>
+                            <Form.Label> Add Customer</Form.Label>
                             <Form.Control
                                 type="email"
-                                placeholder="Company Name"
+                                placeholder="Customer Name"
                                 autoFocus
                             />
                         </Form.Group>
@@ -32,7 +32,7 @@ function Company() {
                             className="mb-3"
                             controlId="exampleForm.ControlTextarea1"
                         >
-                            <Form.Label>Edit Company</Form.Label>
+                            <Form.Label>Edit Customer</Form.Label>
                             <Form.Control as="textarea" rows={3} 
                                 placeholder="List of Current Companies Here"
 />
@@ -52,4 +52,4 @@ function Company() {
     );
 }
 
-export default Company;
+export default Customer;
