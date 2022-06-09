@@ -22,6 +22,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('first_name', sa.String(length=255), nullable=True),
     sa.Column('last_name', sa.String(length=255), nullable=False),
+    sa.Column('email', sa.String(length=255), nullable=False),
     sa.Column('gender', sa.String(length=255), nullable=False),
     sa.Column('title', sa.String(length=255), nullable=False),
     sa.Column('country_code', sa.String(length=255), nullable=False),

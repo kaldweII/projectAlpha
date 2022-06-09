@@ -9,6 +9,7 @@ class Contact(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(255), nullable=True, unique=False)
     last_name = db.Column(db.String(255), nullable=False, unique=False)
+    email = db.Column(db.String(255), nullable=False)
     gender = db.Column(db.String(255), nullable=False)
     title = db.Column(db.String(255), nullable=False)
     country_code = db.Column(db.String(255), nullable=False)
@@ -25,6 +26,7 @@ class Contact(db.Model, UserMixin):
             'id': self.id,
             'first_name': self.first_name,
             'last_name': self.last_name,
+            'email': self.email,
             'gender': self.gender,
             'title':self.title,
             'country_code':self.country_code,
