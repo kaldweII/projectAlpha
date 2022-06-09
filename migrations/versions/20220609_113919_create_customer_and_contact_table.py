@@ -38,6 +38,7 @@ def upgrade():
     )
     op.create_table('customers',
     sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('name', sa.String(length=255), nullable=True),
     sa.Column('alias', sa.String(length=255), nullable=True),
     sa.Column('address', sa.String(length=255), nullable=False),
     sa.Column('suite', sa.String(length=255), nullable=True),
@@ -53,12 +54,13 @@ def upgrade():
     sa.Column('site_link', sa.String(length=255), nullable=True),
     sa.Column('industry', sa.String(length=255), nullable=False),
     sa.Column('db_num', sa.String(length=255), nullable=True),
-    sa.Column('invoice_email', sa.String(length=255), nullable=False),
+    sa.Column('invoice_email', sa.String(length=255), nullable=True),
     sa.Column('main_contact_id', sa.Integer(), nullable=True),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.ForeignKeyConstraint(['main_contact_id'], ['contact.id'], ),
     sa.PrimaryKeyConstraint('id'),
+    sa.UniqueConstraint('name'),
     sa.UniqueConstraint('alias'),
     sa.UniqueConstraint('primary_phone'),
     sa.UniqueConstraint('secondary_phone')

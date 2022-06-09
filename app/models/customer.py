@@ -7,6 +7,7 @@ class Customer(db.Model, UserMixin):
     __tablename__ = 'customers'
 
     id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(255), nullable=True, unique=True)
     alias = db.Column(db.String(255), nullable=True, unique=True)
     address = db.Column(db.String(255), nullable=False, unique=False)
     suite = db.Column(db.String(255), nullable=True)
