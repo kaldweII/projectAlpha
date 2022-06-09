@@ -2,7 +2,7 @@
 import Contact from "../Contact";
 import Contract from "../Contract";
 import Role from "../Role";
-import Company from "../Company";
+import Customer from "../Customer";
 import './Dashboard.css'
 // import loginBkg from '../../assets/LoginArt.png'
 
@@ -14,7 +14,7 @@ function Dashboard(){
             <h1>Dashboard</h1>
             <Contract/>
             <Role/>
-            <Company/>
+            <Customer/>
             <Contact/>
 
         </div>

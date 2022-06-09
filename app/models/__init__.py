@@ -1,3 +1,4 @@
 from .db import db
 from .user import User
-from .role import Role
+from .contact import Contact
+from .customer import Customer

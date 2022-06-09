@@ -8,7 +8,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import Role from './components/Role';
-import Company from './components/Company';
+import Customer from './components/Customer';
 import Contact from './components/Contact';
 import Contract from './components/Contract';
 import LoginPage from './components/LoginPage';
