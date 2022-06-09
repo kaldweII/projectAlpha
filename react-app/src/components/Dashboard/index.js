@@ -15,7 +15,7 @@ function Dashboard(){
             <div className="dashboardTiles">
                 <Contract/>
                 <Role/>
-                <Company/>
+                <Customer/>
                 <Contact/>
             </div>
         </div>
