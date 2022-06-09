@@ -11,12 +11,13 @@ function Dashboard(){
     return(
         <div className="dashboard">
             {/* <img src={loginBkg}></img> */}
-            <h1>Dashboard</h1>
-            <Contract/>
-            <Role/>
-            <Customer/>
-            <Contact/>
-
+            <h1 className="dashHeading">Dashboard</h1>
+            <div className="dashboardTiles">
+                <Contract/>
+                <Role/>
+                <Company/>
+                <Contact/>
+            </div>
         </div>
     )
 }
