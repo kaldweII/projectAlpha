@@ -6,10 +6,19 @@
     margin: auto;
 }
 
-.dashTile{
-    margin-bottom: 5px;
+.dashboardTiles{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    margin: auto;
+}
+
+.dashHeading{
+    margin-bottom: 15px;
 }
 
 .dashButton{
     min-width: 200px;
+    min-height: 200px;
 }
