@@ -32,6 +32,7 @@ class Customer(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
+            'name':self.name,
             'alias': self.alias,
             'address': self.address,
             'suite': self.suite,

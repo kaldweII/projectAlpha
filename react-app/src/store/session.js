@@ -97,36 +97,6 @@ export const signUp = (username, email, password) => async (dispatch) => {
   }
 }
 
-export const createCustomer = (
-  name, alias, address, suite, city, state_or_province, zip, country,
-  primary_phone, primary_phone_ext, secondary_phone, secondary_phone_ext,
-  site_link, industry, db_num, invoice_email
-) => async (dispatch) => {
-  const response = await fetch('/api/customer/createcustomer', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      name, alias, address, suite, city, state_or_province, zip, country,
-      primary_phone, primary_phone_ext, secondary_phone, secondary_phone_ext,
-      site_link, industry, db_num, invoice_email
-    }),
-  });
-  
-  if (response.ok) {
-    const data = await response.json();
-    dispatch(setUser(data))
-    return null;
-  } else if (response.status < 500) {
-    const data = await response.json();
-    if (data.errors) {
-      return data.errors;
-    }
-  } else {
-    return ['An error occurred. Please try again.']
-  }
-}
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {

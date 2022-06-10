@@ -1,7 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms.validators import DataRequired, Email, ValidationError
-from app.models import Customer
 
 class CustomersForm(FlaskForm):
     name = StringField('name', validators=[DataRequired()])
@@ -9,13 +8,14 @@ class CustomersForm(FlaskForm):
     address = StringField('address', validators=[DataRequired()])
     suite = StringField('suite')
     city = StringField('city', validators=[DataRequired()])
-    state_or_province = StringField('state_or_province', validators=[DataRequired()])
-    zip = StringField('zip', validators=[DataRequired()])
+    state = StringField('state', validators=[DataRequired()])
+    zipcode = StringField('zipcode', validators=[DataRequired()])
     country = StringField('country', validators=[DataRequired()])
+    country_code = StringField('country_code', validators=[DataRequired()])
     primary_phone = StringField('primary_phone', validators=[DataRequired()])
-    primary_phone_ext = StringField('primary_phone_ext', validators=[DataRequired()])
+    primary_phone_extension = StringField('primary_phone_extension', validators=[DataRequired()])
     secondary_phone = StringField('secondary_phone')
-    secondary_phone_ext = StringField('secondary_phone_ext')
+    secondary_phone_extension = StringField('secondary_phone_extension')
     site_link = StringField('site_link')
     industry = StringField('industry', validators=[DataRequired()])
     db_num = StringField('db_num', validators=[DataRequired()])
