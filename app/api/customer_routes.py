@@ -27,7 +27,7 @@ def create_customer():
             address=form.data['address'],
             suite=form.data['suite'],
             city=form.data['city'],
-            state_or_province=form.data['state_or_province'],
+            state_or_province=form.data['state'],
             zip=form.data['zip'],
             country=form.data['country'],
             primary_phone=form.data['primary_phone'],

@@ -97,16 +97,20 @@ export const signUp = (username, email, password) => async (dispatch) => {
   }
 }
 
-export const createCustomer = (username, email, password) => async (dispatch) => {
+export const createCustomer = (
+  name, alias, address, suite, city, state_or_province, zip, country,
+  primary_phone, primary_phone_ext, secondary_phone, secondary_phone_ext,
+  site_link, industry, db_num, invoice_email
+) => async (dispatch) => {
   const response = await fetch('/api/customer/createcustomer', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      username,
-      email,
-      password,
+      name, alias, address, suite, city, state_or_province, zip, country,
+      primary_phone, primary_phone_ext, secondary_phone, secondary_phone_ext,
+      site_link, industry, db_num, invoice_email
     }),
   });
   
