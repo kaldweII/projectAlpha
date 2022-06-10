@@ -23,7 +23,8 @@ def main():
     print('yes')
     form = CustomersForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-
+ 
+ 
     if form.validate_on_submit():
         print('yes')
         name=form.data['name'],
