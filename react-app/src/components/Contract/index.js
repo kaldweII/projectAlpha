@@ -10,7 +10,7 @@ function Contract() {
 
     return (
         <div className="dashTile">
-            <Button className="dashButton" variant="success" onClick={handleShow}>
+            <Button className="dashButton" variant="light" onClick={handleShow}>
                 Manage Contracts
             </Button>
 

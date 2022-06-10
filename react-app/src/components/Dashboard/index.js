@@ -4,20 +4,23 @@ import Contract from "../Contract";
 import Role from "../Role";
 import Customer from "../Customer";
 import './Dashboard.css'
-// import loginBkg from '../../assets/LoginArt.png'
+import asarLogo from '../../assets/asarLogo.png'
 
 function Dashboard(){
 
     return(
         <div className="dashboard">
-            {/* <img src={loginBkg}></img> */}
-            <h1 className="dashHeading">Dashboard</h1>
+            <div className="dashBkg"></div>
+            <div className="dashHeaderContainer">
+                <h1 className="dashHeading">Dashboard</h1>
+            </div>
             <div className="dashboardTiles">
                 <Customer/>
                 <Contact/>
                 <Contract/>
                 <Role/>
             </div>
+            <img className='companyLogo' src={asarLogo}></img>
         </div>
     )
 }
