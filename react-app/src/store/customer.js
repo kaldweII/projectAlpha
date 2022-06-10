@@ -37,14 +37,17 @@ export const addNewCustomer = newCustomer => {
   
   }
 
-  
+const initialState = {};
 
-  const customerReducer = (state = {}, action) =>{
+
+
+const customerReducer = (state = initialState, action) => {
+
 
     switch (action.type) {
         case ADD_CUSTOMER: {
-            const newCustomer = {...state};
-            newCustomer[action.newCustomer.id] = action.newCustomer
+            const newCustomer = Object.assign({}, state);
+            newCustomer[action.payload.id] = action.payload
             return newCustomer;
 
 
