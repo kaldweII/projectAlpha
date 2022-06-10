@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
-import { login } from '../../store/session';
-import CustomersForm from './CustomersForm.js'
+import * as customerActions from '../../store/customer';
 
 
 function Customer() {
@@ -14,15 +13,48 @@ function Customer() {
     const [errors, setErrors] = useState([]);
     const [name, setName] = useState('');
     const [alias, setAlias] = useState('');
+    const [address, setAddress] = useState('');
+    const [suite, setSuite] = useState('');
+    const [city, setCity] = useState('');
+    const [state, setState] = useState('');
+    const [zipcode, setZip] = useState('');
+    const [country, setCountry] = useState('');
+    const [country_code, setCountryCode] = useState('');
+    const [primary_phone, setPrimaryPhone] = useState('');
+    const [primary_phone_extension, setPrimaryPhoneExtension] = useState('');
+    const [secondary_phone, setSecondaryPhone] = useState('');
+    const [secondary_phone_extension, setSecondaryPhoneExt] = useState('');
+    const [site_link, setSiteLink] = useState('');
+    const [industry, setIndustry] = useState('');
+    const [db_num, setDBNum] = useState('');
+    const [invoice_email, setInvoiceEmail] = useState('');
     const dispatch = useDispatch();
 
-    // const onCreate = async (e) => {
-    //     e.preventDefault();
-    //     const data = await dispatch(login(email, password));
-    //     if (data) {
-    //     setErrors(data);
-    //     }
-    // };
+    const handleSubmit = async e => {
+        e.preventDefault();
+        setErrors([]);
+
+        const newCustomer = {
+            name, alias, address, suite, city, state, zipcode, country, country_code,
+            primary_phone, primary_phone_extension, secondary_phone, secondary_phone_extension,
+            site_link, industry, db_num, invoice_email
+
+        }
+
+        return dispatch(customerActions.addCustomer(newCustomer))
+        .then(
+            (response) => {
+                if (response.errors){
+                    setErrors(response.errors)
+                    return
+                }
+            }
+        )
+    }
+
+
+
+
 
     const updateName = (e) => {
         setName(e.target.value);
@@ -30,6 +62,66 @@ function Customer() {
 
     const updateAlias = (e) => {
         setAlias(e.target.value);
+    };
+
+    const updateAddress = (e) => {
+        setAddress(e.target.value);
+    };
+
+    const updateSuite = (e) => {
+        setSuite(e.target.value);
+    };
+
+    const updateCity = (e) => {
+        setCity(e.target.value);
+    };
+
+    const updateState = (e) => {
+        setState(e.target.value);
+    };
+
+    const updateZip = (e) => {
+        setZip(e.target.value);
+    };
+
+    const updateCountry = (e) => {
+        setCountry(e.target.value);
+    };
+
+    const updateCountryCode = (e) => {
+        setCountryCode(e.target.value);
+    };
+
+    const updatePrimaryPhone = (e) => {
+        setPrimaryPhone(e.target.value);
+    };
+
+    const updatePrimaryPhoneExtension = (e) => {
+        setPrimaryPhoneExtension(e.target.value);
+    };
+
+    const updateSecondaryPhone = (e) => {
+        setSecondaryPhone(e.target.value);
+    };
+
+    const updateSecondaryPhoneExt = (e) => {
+        setSecondaryPhoneExt(e.target.value);
+    };
+
+    const updateSiteLink = (e) => {
+        setSiteLink(e.target.value);
+    };
+
+    const updateIndustry = (e) => {
+        setIndustry(e.target.value);
+    };
+
+    const updateDBNum = (e) => {
+        setDBNum(e.target.value);
+    };
+
+    const updateInvoiceEmail = (e) => {
+        setInvoiceEmail(e.target.value);
     };
 
     return (
@@ -43,7 +135,7 @@ function Customer() {
                     <Modal.Title>Manage Customers</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='customersModalBody'>
-                    <center><form /*onSubmit={onCreate}*/ className='customersForm'>     
+                    <center><form onSubmit={handleSubmit} id='customersForm' className='customersForm'>     
                         <div className='formInput'>
                             <label htmlFor='name'></label>
                             <input className='input'
@@ -52,7 +144,7 @@ function Customer() {
                             type='text'
                             placeholder='Name'
                             value={name}
-                            onChange={updateName}
+                            onChange={e => setName(e.target.value)}
                             required
                             />
                         </div>
@@ -75,8 +167,8 @@ function Customer() {
                             name='address'
                             type='address'
                             placeholder='Address'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={address}
+                            onChange={updateAddress}
                             required
                             />
                         </div>
@@ -87,8 +179,8 @@ function Customer() {
                             name='suite'
                             type='suite'
                             placeholder='Suite'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={suite}
+                            onChange={updateSuite}
                             required
                             />
                         </div>
@@ -99,32 +191,32 @@ function Customer() {
                             name='city'
                             type='city'
                             placeholder='City'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={city}
+                            onChange={updateCity}
                             required
                             />
                         </div>
                         <div className='formInput'>
-                            <label htmlFor='state_or_province'></label>
+                            <label htmlFor='state'></label>
                             <input
                             className='input'
-                            name='state_or_province'
-                            type='state_or_province'
+                            name='state'
+                            type='state'
                             placeholder='State/Province'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={state}
+                            onChange={updateState}
                             required
                             />
                         </div>
                         <div className='formInput'>
-                            <label htmlFor='zip'></label>
+                            <label htmlFor='zipcode'></label>
                             <input
                             className='input'
-                            name='zip'
-                            type='zip'
-                            placeholder='Zip'
-                            value={alias}
-                            onChange={updateAlias}
+                            name='zipcode'
+                            type='zipcode'
+                            placeholder='Zipcode'
+                            value={zipcode}
+                            onChange={updateZip}
                             required
                             />
                         </div>
@@ -135,8 +227,20 @@ function Customer() {
                             name='country'
                             type='country'
                             placeholder='Country'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={country}
+                            onChange={updateCountry}
+                            required
+                            />
+                        </div>
+                        <div className='formInput'>
+                            <label htmlFor='country_code'></label>
+                            <input
+                            className='input'
+                            name='country_code'
+                            type='country_code'
+                            placeholder='Country Code'
+                            value={country_code}
+                            onChange={updateCountryCode}
                             required
                             />
                         </div>
@@ -147,20 +251,20 @@ function Customer() {
                             name='primary_phone'
                             type='primary_phone'
                             placeholder='Primary Phone'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={primary_phone}
+                            onChange={updatePrimaryPhone}
                             required
                             />
                         </div>
                         <div className='formInput'>
-                            <label htmlFor='primary_phone_ext'></label>
+                            <label htmlFor='primary_phone_extension'></label>
                             <input
                             className='input'
-                            name='primary_phone_ext'
-                            type='primary_phone_ext'
+                            name='primary_phone_extension'
+                            type='primary_phone_extension'
                             placeholder='Primary Phone Extension'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={primary_phone_extension}
+                            onChange={updatePrimaryPhoneExtension}
                             required
                             />
                         </div>
@@ -171,20 +275,20 @@ function Customer() {
                             name='secondary_phone'
                             type='secondary_phone'
                             placeholder='Secondary Phone'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={secondary_phone}
+                            onChange={updateSecondaryPhone}
                             required
                             />
                         </div>
                         <div className='formInput'>
-                            <label htmlFor='secondary_phone_ext'></label>
+                            <label htmlFor='secondary_phone_extension'></label>
                             <input
                             className='input'
-                            name='secondary_phone_ext'
-                            type='secondary_phone_ext'
+                            name='secondary_phone_extension'
+                            type='secondary_phone_extension'
                             placeholder='Secondary Phone Extension'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={secondary_phone_extension}
+                            onChange={updateSecondaryPhoneExt}
                             required
                             />
                         </div>
@@ -195,8 +299,8 @@ function Customer() {
                             name='site_link'
                             type='site_link'
                             placeholder='Website Link'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={site_link}
+                            onChange={updateSiteLink}
                             required
                             />
                         </div>
@@ -207,8 +311,8 @@ function Customer() {
                             name='industry'
                             type='industry'
                             placeholder='Industry'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={industry}
+                            onChange={updateIndustry}
                             required
                             />
                         </div>
@@ -219,8 +323,8 @@ function Customer() {
                             name='db_num'
                             type='db_num'
                             placeholder='D&B Number'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={db_num}
+                            onChange={updateDBNum}
                             required
                             />
                         </div>
@@ -231,8 +335,8 @@ function Customer() {
                             name='invoice_email'
                             type='invoice_email'
                             placeholder='Invoice Email'
-                            value={alias}
-                            onChange={updateAlias}
+                            value={invoice_email}
+                            onChange={updateInvoiceEmail}
                             required
                             />
                         </div>
@@ -248,7 +352,7 @@ function Customer() {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" type='submit' form='customersForm' onClick={handleClose}>
+                    <Button variant="primary" type='submit' form='customersForm' /*onClick={handleClose}*/>
                         Save Changes
                     </Button>
                 </Modal.Footer>
