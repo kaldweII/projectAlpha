@@ -42,14 +42,14 @@ function Customer() {
         }
 
         return dispatch(customerActions.addCustomer(newCustomer))
-        .then(
-            (response) => {
-                if (response.errors){
-                    setErrors(response.errors)
-                    return
-                }
-            }
-        )
+        // .then(
+        //     (response) => {
+        //         if (response.errors){
+        //             setErrors(response.errors)
+        //             return
+        //         }
+        //     }
+        // )
     }
 
 
