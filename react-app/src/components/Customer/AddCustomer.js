@@ -131,6 +131,7 @@ function AddCustomer() {
                             placeholder='State/Province*'
                             value={state}
                             onChange={e => setState(e.target.value)}
+                            required
                             />
                         </div>
                         <div className='formInput'>
