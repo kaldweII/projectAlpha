@@ -1,10 +1,10 @@
+import './AddCustomer.css';
 import { useState } from 'react';
-import { Button, Modal, Form } from 'react-bootstrap';
-import { useSelector, useDispatch } from 'react-redux';
+import { Button, Modal} from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import * as customerActions from '../../store/customer';
 
-
-function Customer() {
+function AddCustomer() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -23,7 +23,7 @@ function Customer() {
     const [primary_phone, setPrimaryPhone] = useState('');
     const [primary_phone_extension, setPrimaryPhoneExtension] = useState('');
     const [secondary_phone, setSecondaryPhone] = useState('');
-    const [secondary_phone_extension, setSecondaryPhoneExt] = useState('');
+    const [secondary_phone_extension, setSecondaryPhoneExtension] = useState('');
     const [site_link, setSiteLink] = useState('');
     const [industry, setIndustry] = useState('');
     const [db_num, setDBNum] = useState('');
@@ -38,10 +38,10 @@ function Customer() {
             name, alias, address, suite, city, state, zipcode, country, country_code,
             primary_phone, primary_phone_extension, secondary_phone, secondary_phone_extension,
             site_link, industry, db_num, invoice_email
-
         }
 
-        return dispatch(customerActions.addCustomer(newCustomer))
+        handleClose();
+        return dispatch(customerActions.addCustomer(newCustomer));
         // .then(
         //     (response) => {
         //         if (response.errors){
@@ -52,78 +52,6 @@ function Customer() {
         // )
     }
 
-
-
-
-
-    const updateName = (e) => {
-        setName(e.target.value);
-    };
-
-    const updateAlias = (e) => {
-        setAlias(e.target.value);
-    };
-
-    const updateAddress = (e) => {
-        setAddress(e.target.value);
-    };
-
-    const updateSuite = (e) => {
-        setSuite(e.target.value);
-    };
-
-    const updateCity = (e) => {
-        setCity(e.target.value);
-    };
-
-    const updateState = (e) => {
-        setState(e.target.value);
-    };
-
-    const updateZip = (e) => {
-        setZip(e.target.value);
-    };
-
-    const updateCountry = (e) => {
-        setCountry(e.target.value);
-    };
-
-    const updateCountryCode = (e) => {
-        setCountryCode(e.target.value);
-    };
-
-    const updatePrimaryPhone = (e) => {
-        setPrimaryPhone(e.target.value);
-    };
-
-    const updatePrimaryPhoneExtension = (e) => {
-        setPrimaryPhoneExtension(e.target.value);
-    };
-
-    const updateSecondaryPhone = (e) => {
-        setSecondaryPhone(e.target.value);
-    };
-
-    const updateSecondaryPhoneExt = (e) => {
-        setSecondaryPhoneExt(e.target.value);
-    };
-
-    const updateSiteLink = (e) => {
-        setSiteLink(e.target.value);
-    };
-
-    const updateIndustry = (e) => {
-        setIndustry(e.target.value);
-    };
-
-    const updateDBNum = (e) => {
-        setDBNum(e.target.value);
-    };
-
-    const updateInvoiceEmail = (e) => {
-        setInvoiceEmail(e.target.value);
-    };
-
     return (
         <div className="dashTile">
             <Button className="dashButton" variant="light" onClick={handleShow}>
@@ -132,17 +60,17 @@ function Customer() {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Manage Customers</Modal.Title>
+                    <Modal.Title>Add Customer</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='customersModalBody'>
-                    <center><form onSubmit={handleSubmit} id='customersForm' className='customersForm'>     
+                    <form onSubmit={handleSubmit} id='customersForm' className='customersForm'>     
                         <div className='formInput'>
                             <label htmlFor='name'></label>
-                            <input className='input'
-                            
+                            <input 
+                            className='input'
                             name='name'
                             type='text'
-                            placeholder='Name'
+                            placeholder='Name*'
                             value={name}
                             onChange={e => setName(e.target.value)}
                             required
@@ -156,8 +84,7 @@ function Customer() {
                             type='alias'
                             placeholder='Alias'
                             value={alias}
-                            onChange={updateAlias}
-                            required
+                            onChange={e => setAlias(e.target.value)}
                             />
                         </div>
                         <div className='formInput'>
@@ -166,9 +93,9 @@ function Customer() {
                             className='input'
                             name='address'
                             type='address'
-                            placeholder='Address'
+                            placeholder='Address*'
                             value={address}
-                            onChange={updateAddress}
+                            onChange={e => setAddress(e.target.value)}
                             required
                             />
                         </div>
@@ -180,8 +107,7 @@ function Customer() {
                             type='suite'
                             placeholder='Suite'
                             value={suite}
-                            onChange={updateSuite}
-                            required
+                            onChange={e => setSuite(e.target.value)}
                             />
                         </div>
                         <div className='formInput'>
@@ -190,9 +116,9 @@ function Customer() {
                             className='input'
                             name='city'
                             type='city'
-                            placeholder='City'
+                            placeholder='City*'
                             value={city}
-                            onChange={updateCity}
+                            onChange={e => setCity(e.target.value)}
                             required
                             />
                         </div>
@@ -202,10 +128,9 @@ function Customer() {
                             className='input'
                             name='state'
                             type='state'
-                            placeholder='State/Province'
+                            placeholder='State/Province*'
                             value={state}
-                            onChange={updateState}
-                            required
+                            onChange={e => setState(e.target.value)}
                             />
                         </div>
                         <div className='formInput'>
@@ -214,9 +139,9 @@ function Customer() {
                             className='input'
                             name='zipcode'
                             type='zipcode'
-                            placeholder='Zipcode'
+                            placeholder='Zipcode*'
                             value={zipcode}
-                            onChange={updateZip}
+                            onChange={e => setZip(e.target.value)}
                             required
                             />
                         </div>
@@ -226,9 +151,9 @@ function Customer() {
                             className='input'
                             name='country'
                             type='country'
-                            placeholder='Country'
+                            placeholder='Country*'
                             value={country}
-                            onChange={updateCountry}
+                            onChange={e => setCountry(e.target.value)}
                             required
                             />
                         </div>
@@ -238,9 +163,9 @@ function Customer() {
                             className='input'
                             name='country_code'
                             type='country_code'
-                            placeholder='Country Code'
+                            placeholder='Country Code*'
                             value={country_code}
-                            onChange={updateCountryCode}
+                            onChange={e => setCountryCode(e.target.value)}
                             required
                             />
                         </div>
@@ -250,9 +175,9 @@ function Customer() {
                             className='input'
                             name='primary_phone'
                             type='primary_phone'
-                            placeholder='Primary Phone'
+                            placeholder='Primary Phone*'
                             value={primary_phone}
-                            onChange={updatePrimaryPhone}
+                            onChange={e => setPrimaryPhone(e.target.value)}
                             required
                             />
                         </div>
@@ -262,10 +187,9 @@ function Customer() {
                             className='input'
                             name='primary_phone_extension'
                             type='primary_phone_extension'
-                            placeholder='Primary Phone Extension'
+                            placeholder='Primary Phone Ext.'
                             value={primary_phone_extension}
-                            onChange={updatePrimaryPhoneExtension}
-                            required
+                            onChange={e => setPrimaryPhoneExtension(e.target.value)}
                             />
                         </div>
                         <div className='formInput'>
@@ -276,8 +200,7 @@ function Customer() {
                             type='secondary_phone'
                             placeholder='Secondary Phone'
                             value={secondary_phone}
-                            onChange={updateSecondaryPhone}
-                            required
+                            onChange={e => setSecondaryPhone(e.target.value)}
                             />
                         </div>
                         <div className='formInput'>
@@ -286,10 +209,9 @@ function Customer() {
                             className='input'
                             name='secondary_phone_extension'
                             type='secondary_phone_extension'
-                            placeholder='Secondary Phone Extension'
+                            placeholder='Secondary Phone Ext.'
                             value={secondary_phone_extension}
-                            onChange={updateSecondaryPhoneExt}
-                            required
+                            onChange={e => setSecondaryPhoneExtension(e.target.value)}
                             />
                         </div>
                         <div className='formInput'>
@@ -300,8 +222,7 @@ function Customer() {
                             type='site_link'
                             placeholder='Website Link'
                             value={site_link}
-                            onChange={updateSiteLink}
-                            required
+                            onChange={e => setSiteLink(e.target.value)}
                             />
                         </div>
                         <div className='formInput'>
@@ -310,9 +231,9 @@ function Customer() {
                             className='input'
                             name='industry'
                             type='industry'
-                            placeholder='Industry'
+                            placeholder='Industry*'
                             value={industry}
-                            onChange={updateIndustry}
+                            onChange={e => setIndustry(e.target.value)}
                             required
                             />
                         </div>
@@ -322,9 +243,9 @@ function Customer() {
                             className='input'
                             name='db_num'
                             type='db_num'
-                            placeholder='D&B Number'
+                            placeholder='D&B Number*'
                             value={db_num}
-                            onChange={updateDBNum}
+                            onChange={e => setDBNum(e.target.value)}
                             required
                             />
                         </div>
@@ -334,9 +255,9 @@ function Customer() {
                             className='input'
                             name='invoice_email'
                             type='invoice_email'
-                            placeholder='Invoice Email'
+                            placeholder='Invoice Email*'
                             value={invoice_email}
-                            onChange={updateInvoiceEmail}
+                            onChange={e => setInvoiceEmail(e.target.value)}
                             required
                             />
                         </div>
@@ -346,13 +267,13 @@ function Customer() {
                             <div key={ind}>{error}</div>
                             ))}
                         </div>
-                        </form></center>
+                    </form>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" type='submit' form='customersForm' /*onClick={handleClose}*/>
+                    <Button variant="primary" type='submit' form='customersForm'>
                         Save Changes
                     </Button>
                 </Modal.Footer>
@@ -361,4 +282,4 @@ function Customer() {
     );
 }
 
-export default Customer;
+export default AddCustomer;
