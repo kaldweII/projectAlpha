@@ -31,7 +31,14 @@ function CustomerList() {
                 {customers.map((val, key) => {
                     return (
                         <tr key={key}>
-                            <td>{val.name}</td>
+                            <td><NavLink
+                                to={`/customers/${val.id}`}
+                                className={isActive =>
+                                    "nav-link" + (!isActive ? " unselected" : "")
+                                }
+                            >
+                                {val.name}
+                            </NavLink></td>
                             <td>{val.address}</td>
                             <td>{val.city}</td>
                             <td>{val.state}</td>
