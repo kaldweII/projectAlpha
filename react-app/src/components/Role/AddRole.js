@@ -2,7 +2,7 @@ import './AddRole.css';
 import { useState } from 'react';
 import { Button, Modal} from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import * as contractActions from '../../store/contract';
+import * as roleActions from '../../store/role';
 
 function AddRole() {
     const [show, setShow] = useState(false);
@@ -46,7 +46,7 @@ function AddRole() {
         }
 
         // Run request. // MODIFY FOR ROLES ROUTE
-        const data = dispatch(contractActions.addContract(newRole));
+        const data = dispatch(roleActions.addRole(newRole));
 
         // Close the modal and reset form state.
         handleClose();
@@ -344,7 +344,7 @@ function AddRole() {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" type='submit' form='contractsForm'>
+                    <Button variant="primary" type='submit' form='rolesForm'>
                         Save Changes
                     </Button>
                 </Modal.Footer>
