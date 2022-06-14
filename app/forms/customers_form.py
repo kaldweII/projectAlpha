@@ -13,7 +13,7 @@ class CustomersForm(FlaskForm):
     country = StringField('country', validators=[DataRequired()])
     country_code = StringField('country_code', validators=[DataRequired()])
     primary_phone = StringField('primary_phone', validators=[DataRequired()])
-    primary_phone_extension = StringField('primary_phone_extension', validators=[DataRequired()])
+    primary_phone_extension = StringField('primary_phone_extension')
     secondary_phone = StringField('secondary_phone')
     secondary_phone_extension = StringField('secondary_phone_extension')
     site_link = StringField('site_link')

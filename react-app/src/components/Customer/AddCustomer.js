@@ -40,16 +40,31 @@ function AddCustomer() {
             site_link, industry, db_num, invoice_email
         }
 
+        // Run request.
+        const data = dispatch(customerActions.addCustomer(newCustomer));
+
+        // Close the modal and reset form state.
         handleClose();
-        return dispatch(customerActions.addCustomer(newCustomer));
-        // .then(
-        //     (response) => {
-        //         if (response.errors){
-        //             setErrors(response.errors)
-        //             return
-        //         }
-        //     }
-        // )
+        setName('');
+        setAlias('');
+        setAddress('');
+        setSuite('');
+        setCity('');
+        setState('');
+        setZip('');
+        setCountry('');
+        setCountryCode('');
+        setPrimaryPhone('');
+        setPrimaryPhoneExtension('');
+        setSecondaryPhone('');
+        setSecondaryPhoneExtension('');
+        setSiteLink(''); 
+        setIndustry(''); 
+        setDBNum('');
+        setInvoiceEmail('');
+
+        // Return request data.
+        return data;
     }
 
     return (
@@ -131,6 +146,7 @@ function AddCustomer() {
                             placeholder='State/Province*'
                             value={state}
                             onChange={e => setState(e.target.value)}
+                            required
                             />
                         </div>
                         <div className='formInput'>
