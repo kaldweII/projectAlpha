@@ -1,5 +1,6 @@
 from itertools import count
 from flask import Blueprint, jsonify, session, request
+from app.models import Contract, db
 from app.forms import ContractsForm
 
 contract_routes = Blueprint('contracts', __name__)
@@ -31,11 +32,11 @@ def main():
         end_date=form.data['end_date'],
         status=form.data['status'],
         original_amount=form.data['original_amount'],
-        amount_billed=form.data['amount_billed'],
+        billed_amount=form.data['billed_amount'],
 
         new_contract = Contract(
             type=type, description=description, start_date=start_date,est_end_date=est_end_date, 
-            end_date=end_date,status=status, original_amount=original_amount, amount_billed=amount_billed,
+            end_date=end_date,status=status, original_amount=original_amount, billed_amount=billed_amount,
         )
     
         db.session.add(new_contract)

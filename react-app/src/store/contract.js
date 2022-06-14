@@ -12,13 +12,11 @@ export const addNewContract = newContract => {
 //THUNKS
 
 export const addContract = (payload) => async (dispatch) => {
-
     const res = await fetch('/api/contracts/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
     });
-
 
     const data = await res.json();
     // console.log(data)

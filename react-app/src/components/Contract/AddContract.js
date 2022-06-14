@@ -2,7 +2,7 @@ import './AddContract.css';
 import { useState } from 'react';
 import { Button, Modal} from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import * as customerActions from '../../store/customer';
+import * as contractActions from '../../store/contract';
 
 function AddContract() {
     const [show, setShow] = useState(false);
@@ -11,14 +11,14 @@ function AddContract() {
     const handleShow = () => setShow(true);
 
     const [errors, setErrors] = useState([]);
-    const [type, setType] = useState('');
-    const [description, setDescription] = useState('');
-    const [start_date, setStartDate] = useState('');
-    const [est_end_date, setEstEndDate] = useState('');
-    const [end_date, setEndDate] = useState('');
-    const [status, setStatus] = useState('');
-    const [original_amount, setOriginalAmount] = useState('');
-    const [billed_amount, setBilledAmount] = useState('');
+    const [type, setType] = useState(null);
+    const [description, setDescription] = useState(null);
+    const [start_date, setStartDate] = useState(null);
+    const [est_end_date, setEstEndDate] = useState(null);
+    const [end_date, setEndDate] = useState(null);
+    const [status, setStatus] = useState(null);
+    const [original_amount, setOriginalAmount] = useState(null);
+    const [billed_amount, setBilledAmount] = useState(null);
     const dispatch = useDispatch();
 
     const handleSubmit = async e => {
@@ -29,19 +29,19 @@ function AddContract() {
             type, description, start_date, est_end_date, end_date, status, original_amount, billed_amount
         }
 
-        // Run request. // MODIFY FOR BACKEND
-        const data = dispatch(customerActions.addCustomer(newContract));
+        // Run request.
+        const data = dispatch(contractActions.addContract(newContract));
 
         // Close the modal and reset form state.
         handleClose();
-        setType('');
-        setDescription('');
-        setStartDate('');
-        setEstEndDate('');
-        setEndDate('');
-        setStatus('');
-        setOriginalAmount('');
-        setBilledAmount('');
+        setType(null);
+        setDescription(null);
+        setStartDate(null);
+        setEstEndDate(null);
+        setEndDate(null);
+        setStatus(null);
+        setOriginalAmount(null);
+        setBilledAmount(null);
 
         // Return request data.
         return data;
@@ -113,10 +113,9 @@ function AddContract() {
                             className='input'
                             name='end_date'
                             type='text'
-                            placeholder='End Date*'
+                            placeholder='End Date'
                             value={end_date}
                             onChange={e => setEndDate(e.target.value)}
-                            required
                             />
                         </div>
                         <div className='formInput'>

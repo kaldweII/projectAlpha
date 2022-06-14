@@ -3,8 +3,8 @@ from flask_login import UserMixin
 from sqlalchemy.sql import func
 
 
-class Contact(db.Model, UserMixin):
-    __tablename__ = 'contacts'
+class Contract(db.Model, UserMixin):
+    __tablename__ = 'contracts'
 
     id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String(255), nullable=True, unique=False)
