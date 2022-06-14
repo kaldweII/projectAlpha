@@ -57,5 +57,8 @@ def main():
         db.session.add(new_customer)
         db.session.commit()
         return new_customer.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
-
+    elif form.errors:
+            return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    elif request.method == 'GET':
+        customers = Customer.query.all()
+        return {"customers": [customer.to_dict() for customer in customers]}

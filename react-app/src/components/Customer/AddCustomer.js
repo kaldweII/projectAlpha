@@ -70,7 +70,7 @@ function AddCustomer() {
     return (
         <div className="dashTile">
             <Button className="dashButton" variant="light" onClick={handleShow}>
-                Manage Customers
+            Add Customer
             </Button>
 
             <Modal show={show} onHide={handleClose}>

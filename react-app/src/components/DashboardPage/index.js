@@ -1,9 +1,9 @@
 import Contact from "../Contact";
 import Contract from "../Contract";
 import Role from "../Role";
-import Customer from "../Customer";
-import './Dashboard.css'
+import '../View.css'
 import asarLogo from '../../assets/asarLogo.png'
+import ManageCustomers from "../Customer/ManageCustomers";
 
 function Dashboard(){
 
@@ -14,7 +14,7 @@ function Dashboard(){
                 <h1 className="dashHeading">Dashboard</h1>
             </div>
             <div className="dashboardTiles">
-                <Customer/>
+                <ManageCustomers/>
                 <Contact/>
                 <Contract/>
                 <Role/>
