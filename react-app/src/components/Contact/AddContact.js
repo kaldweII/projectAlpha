@@ -1,10 +1,11 @@
+import './AddContact.css';
 import { useState } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import * as contactActions from '../../store/contact';
 
 
-function ContactModal() {
+function AddContact() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -60,51 +61,6 @@ function ContactModal() {
     
     }
 
-
-
-
-    const updateFirstName = (e) => {
-        setFirstName(e.target.value);
-    };
-
-    const updateLastName = (e) => {
-        setLastName(e.target.value);
-    };
-
-    const updateEmail = (e) => {
-        setEmail(e.target.value);
-    };
-
-    const updateGender = (e) => {
-        setGender(e.target.value);
-    };
-
-    const updateTitle = (e) => {
-        setTitle(e.target.value);
-    };
-
-
-    const updateCountryCode = (e) => {
-        setCountryCode(e.target.value);
-    };
-
-    const updateMobilePhoneNumber = (e) => {
-        setMobilePhoneNumber(e.target.value);
-    };
-
-    const updateOfficePhone = (e) => {
-        setOfficePhoneNumber(e.target.value);
-    };
-
-    const updateOfficePhoneExtension = (e) => {
-        setOfficePhoneExtension(e.target.value);
-    };
-
-    const updateLinkedinUrl = (e) => {
-        setLinkedinUrl(e.target.value);
-    };
-
-
     return (
         <div className="dashTile">
             <Button className="dashButton" variant="light" onClick={handleShow}>
@@ -113,7 +69,7 @@ function ContactModal() {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Manage Contacts</Modal.Title>
+                    <Modal.Title>Add Contact</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='contactsModalBody'>
                     <center><form onSubmit={handleSubmit} id='contactsForm' className='contactsForm'>
@@ -123,9 +79,9 @@ function ContactModal() {
 
                                 name='first_name'
                                 type='first_name'
-                                placeholder='First Name'
+                                placeholder='First Name*'
                                 value={first_name}
-                                onChange={updateFirstName}
+                                onChange={e => setFirstName(e.target.value)}
                                 required
                             />
                         </div>
@@ -135,9 +91,9 @@ function ContactModal() {
                                 className='input'
                                 name='last_name'
                                 type='last_name'
-                                placeholder='Last Name'
+                                placeholder='Last Name*'
                                 value={last_name}
-                                onChange={updateLastName}
+                                onChange={e => setLastName(e.target.value)}
                                 required
                             />
                         </div>
@@ -147,9 +103,9 @@ function ContactModal() {
                                 className='input'
                                 name='email'
                                 type='email'
-                                placeholder='Email'
+                                placeholder='Email*'
                                 value={email}
-                                onChange={updateEmail}
+                                onChange={e => setEmail(e.target.value)}
                                 required
                             />
                         </div>
@@ -159,9 +115,9 @@ function ContactModal() {
                                 className='input'
                                 name='gender'
                                 type='gender'
-                                placeholder='Gender'
+                                placeholder='Gender*'
                                 value={gender}
-                                onChange={updateGender}
+                                onChange={e => setGender(e.target.value)}
                                 required
                             />
                         </div>
@@ -171,23 +127,21 @@ function ContactModal() {
                                 className='input'
                                 name='title'
                                 type='title'
-                                placeholder='Title'
+                                placeholder='Title*'
                                 value={title}
-                                onChange={updateTitle}
+                                onChange={e => setTitle(e.target.value)}
                                 required
                             />
                         </div>
-                  
-                
                         <div className='formInput'>
                             <label htmlFor='country_code'></label>
                             <input
                                 className='input'
                                 name='country_code'
                                 type='country_code'
-                                placeholder='Country Code'
+                                placeholder='Country Code*'
                                 value={country_code}
-                                onChange={updateCountryCode}
+                                onChange={e => setCountryCode(e.target.value)}
                                 required
                             />
                         </div>
@@ -197,9 +151,9 @@ function ContactModal() {
                                 className='input'
                                 name='mobile_phone_number'
                                 type='mobile_phone_number'
-                                placeholder='Mobile Phone'
+                                placeholder='Mobile Phone*'
                                 value={mobile_phone_number}
-                                onChange={updateMobilePhoneNumber}
+                                onChange={e => setMobilePhoneNumber(e.target.value)}
                                 required
                             />
                         </div>
@@ -212,8 +166,7 @@ function ContactModal() {
                                 type='office_phone_number'
                                 placeholder='Office Phone'
                                 value={office_phone_number}
-                                onChange={updateOfficePhone}
-                                
+                                onChange={e => setOfficePhoneNumber(e.target.value)}
                             />
                         </div>
                         <div className='formInput'>
@@ -224,7 +177,7 @@ function ContactModal() {
                                 type='office_phone_extension'
                                 placeholder='Office Phone Extension'
                                 value={office_phone_extension}
-                                onChange={updateOfficePhoneExtension}
+                                onChange={e => setOfficePhoneExtension(e.target.value)}
                             />
                         </div>
                         <div className='formInput'>
@@ -235,13 +188,11 @@ function ContactModal() {
                                 type='linkedin_url'
                                 placeholder='LinkedIn'
                                 value={linkedin_url}
-                                onChange={updateLinkedinUrl}
+                                onChange={e => setLinkedinUrl(e.target.value)}
                                 
                             />
                         </div>
                   
-        
-
                         <div className='contactErrors'>
                             {errors.map((error, ind) => (
                                 <div key={ind}>{error}</div>
@@ -253,7 +204,7 @@ function ContactModal() {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" type='submit' form='contactsForm' /*onClick={handleClose}*/>
+                    <Button variant="primary" type='submit' form='contactsForm'>
                         Save Changes
                     </Button>
                 </Modal.Footer>
@@ -262,4 +213,4 @@ function ContactModal() {
     );
 }
 
-export default ContactModal;
+export default AddContact;

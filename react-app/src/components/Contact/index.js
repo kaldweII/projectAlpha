@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
-import ContactModal from './ContactModal';
+import AddContact from './AddContact';
 
 
 function Contact() {
-
     return (
-        <ContactModal></ContactModal>
-
+        <AddContact/>
     )
 
 }
