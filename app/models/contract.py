@@ -9,9 +9,9 @@ class Contact(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String(255), nullable=True, unique=False)
     description = db.Column(db.String(255), nullable=False, unique=False)
-    start_date = db.Column(db.String(255), nullable=False)
-    est_end_date = db.Column(db.String(255), nullable=False)
-    end_date = db.Column(db.String(255), nullable=True)
+    start_date = db.Column(db.Date, nullable=False)
+    est_end_date = db.Column(db.Date, nullable=False)
+    end_date = db.Column(db.Date, nullable=True)
     status = db.Column(db.String(255), nullable=True)
     customer = db.Column(db.Integer, nullable=True) # temporarily nullable
     sap_account_exec = db.Column(db.Integer, nullable=True)
