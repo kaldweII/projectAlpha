@@ -10,32 +10,30 @@ class Contact(db.Model, UserMixin):
     type = db.Column(db.String(255), nullable=True, unique=False)
     description = db.Column(db.String(255), nullable=False, unique=False)
     start_date = db.Column(db.String(255), nullable=False)
-     = db.Column(db.String(255), nullable=False)
-    title = db.Column(db.String(255), nullable=False)
-    country_code = db.Column(db.String(255), nullable=False)
-    mobile_phone_number = db.Column(db.String(255), nullable=False,unique=True )
-    office_phone_number = db.Column(db.String(255), nullable=True, unique=True)
-    office_phone_extension = db.Column(db.String(255), nullable=True)
-    linkedin_url = db.Column(db.String(255), nullable=True)
-    created_at = db.Column(db.DateTime, server_default=func.now())
-    updated_at = db.Column(db.DateTime, onupdate=func.now())
+    est_end_date = db.Column(db.String(255), nullable=False)
+    end_date = db.Column(db.String(255), nullable=True)
+    status = db.Column(db.String(255), nullable=True)
+    customer = db.Column(db.Integer, nullable=True) # temporarily nullable
+    sap_account_exec = db.Column(db.Integer, nullable=True)
+    sales_contact = db.Column(db.Integer, nullable=True)
+    project_manager = db.Column(db.Integer, nullable=True)
+    original_amount = db.Column(db.Integer, nullable=True)
+    billed_amount = db.Column(db.Integer, nullable=True)
 
 
     def to_dict(self):
         return {
             'id': self.id,
-            'first_name': self.first_name,
-            'last_name': self.last_name,
-            'email': self.email,
-            'gender': self.gender,
-            'title':self.title,
-            'country_code':self.country_code,
-            'mobile_phone_number':self.mobile_phone_number,
-            'office_phone_number':self.office_phone_number,
-            'office_phone_extension':self.office_phone_extension,
-            'linkedin_url':self.linkedin_url,
-
+            'type': self.type,
+            'description': self.description,
+            'start_date': self.start_date,
+            'est_end_date': self.est_end_date,
+            'end_date':self.end_date,
+            'status':self.status,
+            'customer':self.customer,
+            'sap_account_exec':self.sap_account_exec,
+            'sales_contact':self.sales_contact,
+            'project_manager':self.project_manager,
+            'original_amount':self.original_amount,
+            'billed_amount':self.billed_amount,
         }
-
-    customer = db.relationship("Customer", back_populates="contact")
-
