@@ -33,8 +33,6 @@ class Contact(db.Model, UserMixin):
             'mobile_phone_number':self.mobile_phone_number,
             'office_phone_number':self.office_phone_number,
             'office_phone_extension':self.office_phone_extension,
-            'primary_phone':self.primary_phone,
-            'primary_phone_extension':self.primary_phone_extension,
             'linkedin_url':self.linkedin_url,
 
         }

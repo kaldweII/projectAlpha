@@ -26,7 +26,6 @@ def main():
  
  
     if form.validate_on_submit():
-        print('yes')
         name=form.data['name'],
         alias=form.data['alias'],
         address=form.data['address'],
