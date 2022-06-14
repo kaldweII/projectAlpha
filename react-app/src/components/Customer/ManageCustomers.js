@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function ManageCustomers(){
     return (
@@ -8,7 +9,9 @@ function ManageCustomers(){
                 "nav-link" + (!isActive ? " unselected" : "")
             }
         >
-            Manage Customers
+            <Button className="dashButton" variant="light">
+                Manage Customers
+            </Button>
         </NavLink>
     )
 }
