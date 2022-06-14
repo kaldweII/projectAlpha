@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Button, Modal} from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import * as customerActions from '../../store/customer';
+import './Customer.css'
 
 function AddCustomer() {
     const [show, setShow] = useState(false);
@@ -68,9 +69,9 @@ function AddCustomer() {
     }
 
     return (
-        <div className="dashTile">
-            <Button className="" variant="light" onClick={handleShow}>
-            +
+        <div className="addCustomer">
+            <Button className="" variant="success" onClick={handleShow}>
+            Add Customer
             </Button>
 
             <Modal show={show} onHide={handleClose}>
@@ -290,7 +291,7 @@ function AddCustomer() {
                         Close
                     </Button>
                     <Button variant="primary" type='submit' form='customersForm'>
-                        Save Changes
+                        Add Customer
                     </Button>
                 </Modal.Footer>
             </Modal>
