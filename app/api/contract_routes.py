@@ -1,6 +1,5 @@
 from itertools import count
 from flask import Blueprint, jsonify, session, request
-from app.models import Contract, db
 from app.forms import ContractsForm
 
 contract_routes = Blueprint('contracts', __name__)
