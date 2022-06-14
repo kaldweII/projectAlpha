@@ -11,10 +11,10 @@ function ManageCustomers() {
             <div className="dashHeaderContainer">
                 <h1 className="dashHeading">Manage Customers</h1>
             </div>
+            <AddCustomer />
+
             <div className="table">
-                <AddCustomer/>
                 <CustomerList/>
-              
             </div>
             <img className='companyLogo' src={asarLogo}></img>
         </div>
