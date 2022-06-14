@@ -1,6 +1,15 @@
 const ADD_CUSTOMER = 'ADD_CUSTOMER'
+const LOAD_CUSTOMERS = 'LOAD_CUSTOMERS';
+
 
 // ACTIONS
+
+export const loadCustomers = customers => {
+  return {
+    type: LOAD_CUSTOMERS,
+    payload: customers,
+  }
+};
 
 export const addNewCustomer = newCustomer => {
     return {
@@ -10,6 +19,15 @@ export const addNewCustomer = newCustomer => {
   }
 
   //THUNKS
+
+export const getCustomers = () => async (dispatch) => {
+  const res = await fetch('/api/customers/');
+  const data = await res.json();
+  if (res.ok) {
+    dispatch(loadCustomers(data.customers));
+    return res;
+  }
+}
   
   export const addCustomer = (payload) => async (dispatch) => {
 
@@ -45,6 +63,14 @@ const customerReducer = (state = initialState, action) => {
 
 
     switch (action.type) {
+        case LOAD_CUSTOMERS: {
+            const newState = {};
+            action.payload.forEach((deck) => {
+            newState[deck.id] = deck;
+        })
+            return newState;
+      }
+
         case ADD_CUSTOMER: {
             const newCustomer = Object.assign({}, state);
             newCustomer[action.payload.id] = action.payload

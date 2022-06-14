@@ -9,12 +9,14 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import Role from './components/Role';
 import Customer from './components/Customer';
+import AddCustomer from './components/Customer/AddCustomer';
 import Contact from './components/Contact';
 import Contract from './components/Contract';
 import LoginPage from './components/LoginPage';
-import Dashboard from './components/Dashboard';
+import Dashboard from './components/DashboardPage';
 import { authenticate } from './store/session';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ManageCustomers from './components/ManageCustomersPage';
 
 
 
@@ -43,6 +45,9 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
+        <ProtectedRoute path='/customers' exact={true} >
+          <ManageCustomers />
+        </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
