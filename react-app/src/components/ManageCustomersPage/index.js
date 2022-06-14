@@ -11,7 +11,7 @@ function ManageCustomers() {
             <div className="dashHeaderContainer">
                 <h1 className="dashHeading">Manage Customers</h1>
             </div>
-            <div className="">
+            <div className="table">
                 <AddCustomer/>
                 <CustomerList/>
               

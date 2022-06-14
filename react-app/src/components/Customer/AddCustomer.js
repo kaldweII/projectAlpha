@@ -11,23 +11,23 @@ function AddCustomer() {
     const handleShow = () => setShow(true);
 
     const [errors, setErrors] = useState([]);
-    const [name, setName] = useState('');
-    const [alias, setAlias] = useState('');
-    const [address, setAddress] = useState('');
-    const [suite, setSuite] = useState('');
-    const [city, setCity] = useState('');
-    const [state, setState] = useState('');
-    const [zipcode, setZip] = useState('');
-    const [country, setCountry] = useState('');
-    const [country_code, setCountryCode] = useState('');
-    const [primary_phone, setPrimaryPhone] = useState('');
-    const [primary_phone_extension, setPrimaryPhoneExtension] = useState('');
-    const [secondary_phone, setSecondaryPhone] = useState('');
-    const [secondary_phone_extension, setSecondaryPhoneExtension] = useState('');
-    const [site_link, setSiteLink] = useState('');
-    const [industry, setIndustry] = useState('');
-    const [db_num, setDBNum] = useState('');
-    const [invoice_email, setInvoiceEmail] = useState('');
+    const [name, setName] = useState(null);
+    const [alias, setAlias] = useState(null);
+    const [address, setAddress] = useState(null);
+    const [suite, setSuite] = useState(null);
+    const [city, setCity] = useState(null);
+    const [state, setState] = useState(null);
+    const [zipcode, setZip] = useState(null);
+    const [country, setCountry] = useState(null);
+    const [country_code, setCountryCode] = useState(null);
+    const [primary_phone, setPrimaryPhone] = useState(null);
+    const [primary_phone_extension, setPrimaryPhoneExtension] = useState(null);
+    const [secondary_phone, setSecondaryPhone] = useState(null);
+    const [secondary_phone_extension, setSecondaryPhoneExtension] = useState(null);
+    const [site_link, setSiteLink] = useState(null);
+    const [industry, setIndustry] = useState(null);
+    const [db_num, setDBNum] = useState(null);
+    const [invoice_email, setInvoiceEmail] = useState(null);
     const dispatch = useDispatch();
 
     const handleSubmit = async e => {
@@ -45,23 +45,23 @@ function AddCustomer() {
 
         // Close the modal and reset form state.
         handleClose();
-        setName('');
-        setAlias('');
-        setAddress('');
-        setSuite('');
-        setCity('');
-        setState('');
-        setZip('');
-        setCountry('');
-        setCountryCode('');
-        setPrimaryPhone('');
-        setPrimaryPhoneExtension('');
-        setSecondaryPhone('');
-        setSecondaryPhoneExtension('');
-        setSiteLink(''); 
-        setIndustry(''); 
-        setDBNum('');
-        setInvoiceEmail('');
+        setName(null);
+        setAlias(null);
+        setAddress(null);
+        setSuite(null);
+        setCity(null);
+        setState(null);
+        setZip(null);
+        setCountry(null);
+        setCountryCode(null);
+        setPrimaryPhone(null);
+        setPrimaryPhoneExtension(null);
+        setSecondaryPhone(null);
+        setSecondaryPhoneExtension(null);
+        setSiteLink(null); 
+        setIndustry(null); 
+        setDBNum(null);
+        setInvoiceEmail(null);
 
         // Return request data.
         return data;
@@ -69,8 +69,8 @@ function AddCustomer() {
 
     return (
         <div className="dashTile">
-            <Button className="dashButton" variant="light" onClick={handleShow}>
-            Add Customer
+            <Button className="" variant="light" onClick={handleShow}>
+            +
             </Button>
 
             <Modal show={show} onHide={handleClose}>
