@@ -1,8 +1,9 @@
 import './AddContract.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Modal} from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as contractActions from '../../store/contract';
+import * as customerActions from '../../store/customer';
 
 function AddContract() {
     const [show, setShow] = useState(false);
@@ -17,16 +18,25 @@ function AddContract() {
     const [est_end_date, setEstEndDate] = useState(null);
     const [end_date, setEndDate] = useState(null);
     const [status, setStatus] = useState(null);
+    const [customer, setCustomer] = useState(null);
     const [original_amount, setOriginalAmount] = useState(null);
     const [billed_amount, setBilledAmount] = useState(null);
+
+    const customers = useSelector(state => Object.values(state.customers));
+    const userId = useSelector(state => state.session.user.id)
+
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(customerActions.getCustomers());
+    }, [dispatch, userId]);
 
     const handleSubmit = async e => {
         e.preventDefault();
         setErrors([]);
 
         const newContract = {
-            type, description, start_date, est_end_date, end_date, status, original_amount, billed_amount
+            type, description, start_date, est_end_date, end_date, status, customer, original_amount, billed_amount
         }
 
         // Run request.
@@ -40,6 +50,7 @@ function AddContract() {
         setEstEndDate(null);
         setEndDate(null);
         setStatus(null);
+        setCustomer(null);
         setOriginalAmount(null);
         setBilledAmount(null);
 
@@ -58,7 +69,22 @@ function AddContract() {
                     <Modal.Title>Add Contract</Modal.Title>
                 </Modal.Header>
                 <Modal.Body className='contractsModalBody'>
-                    <form onSubmit={handleSubmit} id='contractsForm' className='contractsForm'>     
+                    <form onSubmit={handleSubmit} id='contractsForm' className='contractsForm'>
+                    <div className='formInput'>
+                            <select className="input" name="customerSelect" id="customerSelect" onChange={e => setCustomer(e.target.value)} required>
+                                <option value={null} disabled selected>Select a Customer*</option>
+                                {customers.map((val) => {
+                                    return (
+                                        <option
+                                            name='customer_id'
+                                            value={val.id}
+                                        >
+                                        {val.name}
+                                        </option>
+                                    );
+                                })}
+                            </select>
+                        </div>
                         <div className='formInput'>
                             <label htmlFor='type'></label>
                             <input 

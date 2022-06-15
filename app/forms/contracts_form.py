@@ -9,7 +9,7 @@ class ContractsForm(FlaskForm):
     est_end_date = StringField('est_end_date', validators=[DataRequired()])
     end_date = StringField('end_date')
     status = StringField('status')
-    customer = StringField('customer') # temporarily not required
+    customer = StringField('customer', validators=[DataRequired()])
     sap_account_exec = StringField('sap_account_exec')
     sales_contact = StringField('sales_contact')
     project_manager = StringField('project_manager')

@@ -13,7 +13,7 @@ class Contract(db.Model, UserMixin):
     est_end_date = db.Column(db.Date, nullable=False)
     end_date = db.Column(db.Date, nullable=True)
     status = db.Column(db.String(255), nullable=True)
-    customer = db.Column(db.Integer, nullable=True) # temporarily nullable
+    customer = db.Column(db.Integer, db.ForeignKey('customers.id'), nullable=False)
     sap_account_exec = db.Column(db.Integer, nullable=True)
     sales_contact = db.Column(db.Integer, nullable=True)
     project_manager = db.Column(db.Integer, nullable=True)
