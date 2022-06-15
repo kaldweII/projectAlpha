@@ -1,8 +1,9 @@
 import './AddContact.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button, Modal, Form } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import * as contactActions from '../../store/contact';
+import * as customerActions from '../../store/customer';
 
 
 function AddContact() {
@@ -22,7 +23,16 @@ function AddContact() {
     const [office_phone_number, setOfficePhoneNumber] = useState(null);
     const [office_phone_extension, setOfficePhoneExtension] = useState(null);
     const [linkedin_url, setLinkedinUrl] = useState(null);
+    const [customer, setCustomer] = useState(null);
+
+    const customers = useSelector(state => Object.values(state.customers));
+    const userId = useSelector(state => state.session.user.id)
+
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(customerActions.getCustomers());
+    }, [dispatch, userId]);
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -31,8 +41,7 @@ function AddContact() {
         const newContact = {
             first_name, last_name, email, gender, title, country_code,
             mobile_phone_number, office_phone_number, office_phone_extension,
-            linkedin_url
-
+            linkedin_url, customer
         }
 
         handleClose();
@@ -45,6 +54,7 @@ function AddContact() {
         setMobilePhoneNumber(null);
         setOfficePhoneNumber(null);
         setOfficePhoneExtension(null);
+        setCustomer(null);
         setLinkedinUrl(null);
 
         return dispatch(contactActions.addContact(newContact))
@@ -56,9 +66,6 @@ function AddContact() {
         //         }
         //     }
         // )
-        
-
-    
     }
 
     return (
@@ -189,8 +196,22 @@ function AddContact() {
                                 placeholder='LinkedIn'
                                 value={linkedin_url}
                                 onChange={e => setLinkedinUrl(e.target.value)}
-                                
                             />
+                        </div>
+                        <div className='formInput'>
+                            <select className="input" name="customerSelect" id="customerSelect" onChange={e => setCustomer(e.target.value)}>
+                                <option value={null} disabled selected>Select A Customer</option>
+                                {customers.map((val) => {
+                                    return (
+                                        <option
+                                            name='customer_id'
+                                            value={val.id}
+                                        >
+                                        {val.name}
+                                        </option>
+                                    );
+                                })}
+                            </select>
                         </div>
                   
                         <div className='contactErrors'>

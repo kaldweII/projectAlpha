@@ -30,6 +30,7 @@ def upgrade():
     sa.Column('office_phone_number', sa.String(length=255), nullable=True),
     sa.Column('office_phone_extension', sa.String(length=255), nullable=True),
     sa.Column('linkedin_url', sa.String(length=255), nullable=True),
+    sa.Column('customer', sa.Integer(), nullable=True),
     sa.Column('created_at', sa.DateTime(), server_default=sa.text('now()'), nullable=True),
     sa.Column('updated_at', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id'),
