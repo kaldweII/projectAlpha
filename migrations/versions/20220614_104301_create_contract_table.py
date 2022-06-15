@@ -26,7 +26,7 @@ def upgrade():
     sa.Column('est_end_date', sa.Date(), nullable=False),
     sa.Column('end_date', sa.Date(), nullable=True),
     sa.Column('status', sa.String(length=255), nullable=True),
-    sa.Column('customer', sa.Integer(), nullable=True),
+    sa.Column('customer', sa.Integer(), nullable=False),
     sa.Column('sap_account_exec', sa.Integer(), nullable=True),
     sa.Column('sales_contact', sa.Integer(), nullable=True),
     sa.Column('project_manager', sa.Integer(), nullable=True),

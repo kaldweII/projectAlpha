@@ -31,12 +31,14 @@ def main():
         est_end_date=form.data['est_end_date'],
         end_date=form.data['end_date'],
         status=form.data['status'],
+        customer=form.data['customer'],
         original_amount=form.data['original_amount'],
         billed_amount=form.data['billed_amount'],
 
         new_contract = Contract(
             type=type, description=description, start_date=start_date,est_end_date=est_end_date, 
-            end_date=end_date,status=status, original_amount=original_amount, billed_amount=billed_amount,
+            end_date=end_date, status=status, customer=customer, original_amount=original_amount, 
+            billed_amount=billed_amount,
         )
     
         db.session.add(new_contract)

@@ -118,15 +118,12 @@ function AddContact() {
                         </div>
                         <div className='formInput'>
                             <label htmlFor='gender'></label>
-                            <input
-                                className='input'
-                                name='gender'
-                                type='gender'
-                                placeholder='Gender*'
-                                value={gender}
-                                onChange={e => setGender(e.target.value)}
-                                required
-                            />
+                            <select className="input" name="gender" id="gender" onChange={e => setGender(e.target.value)} required>
+                                <option value={null} disabled selected>Select a Gender*</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
                         <div className='formInput'>
                             <label htmlFor='title'></label>
@@ -164,7 +161,6 @@ function AddContact() {
                                 required
                             />
                         </div>
-                
                         <div className='formInput'>
                             <label htmlFor='office_phone_number'></label>
                             <input
@@ -200,7 +196,7 @@ function AddContact() {
                         </div>
                         <div className='formInput'>
                             <select className="input" name="customerSelect" id="customerSelect" onChange={e => setCustomer(e.target.value)}>
-                                <option value={null} disabled selected>Select A Customer</option>
+                                <option value={null} disabled selected>Select a Customer</option>
                                 {customers.map((val) => {
                                     return (
                                         <option
