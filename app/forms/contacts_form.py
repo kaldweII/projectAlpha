@@ -13,3 +13,4 @@ class ContactsForm(FlaskForm):
     office_phone_number = StringField('office_phone_number')
     office_phone_extension = StringField('office_phone_extension')
     linkedin_url = StringField('linkedin_url')
+    customer = StringField('customer')

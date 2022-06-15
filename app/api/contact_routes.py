@@ -36,13 +36,13 @@ def main():
         office_phone_number=form.data['office_phone_number'],
         office_phone_extension=form.data['office_phone_extension'],
         linkedin_url=form.data['linkedin_url'],
-
+        customer=form.data['customer'],
 
 
         new_contact = Contact(
             first_name=first_name, last_name=last_name, email=email,gender=gender, title=title,country_code=country_code, 
             mobile_phone_number=mobile_phone_number, office_phone_number=office_phone_number, office_phone_extension=office_phone_extension, 
-            linkedin_url=linkedin_url
+            linkedin_url=linkedin_url, customer=customer
         )
     
         db.session.add(new_contact)

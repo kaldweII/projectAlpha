@@ -17,9 +17,9 @@ class Contact(db.Model, UserMixin):
     office_phone_number = db.Column(db.String(255), nullable=True, unique=True)
     office_phone_extension = db.Column(db.String(255), nullable=True)
     linkedin_url = db.Column(db.String(255), nullable=True)
+    customer = db.Column(db.Integer(), db.ForeignKey('customers.id'), nullable=True)
     created_at = db.Column(db.DateTime, server_default=func.now())
     updated_at = db.Column(db.DateTime, onupdate=func.now())
-
 
     def to_dict(self):
         return {
@@ -34,8 +34,5 @@ class Contact(db.Model, UserMixin):
             'office_phone_number':self.office_phone_number,
             'office_phone_extension':self.office_phone_extension,
             'linkedin_url':self.linkedin_url,
-
+            'customer':self.customer,
         }
-
-        customer = db.relationship("Customer", back_populates="contact")
-
