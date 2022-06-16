@@ -1,11 +1,9 @@
-import Contact from "../Contact";
-import Contract from "../Contract";
 import Role from "../Role";
 import '../View.css'
 import asarLogo from '../../assets/asarLogo.png'
 import ManageCustomers from "../Customer/ManageCustomersButton";
-import ManageContacts from "../Contact/ManageContactsButton";
-
+import ManageContactsButton from "../Contact/ManageContactsButton";
+import ManageContractsButton from "../Contract/ManageContractButton";
 function Dashboard(){
 
     return(
@@ -16,8 +14,8 @@ function Dashboard(){
             </div>
             <div className="dashboardTiles">
                 <ManageCustomers/>
-                <ManageContacts/>
-                <Contract/>
+                <ManageContactsButton/>
+                <ManageContractsButton/>
                 <Role/>
             </div>
             <img className='companyLogo' src={asarLogo}></img>

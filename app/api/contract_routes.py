@@ -44,5 +44,8 @@ def main():
         db.session.add(new_contract)
         db.session.commit()
         return new_contract.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
-
+    elif form.errors:
+        return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    elif request.method == 'GET':
+        contracts = Contract.query.all()
+        return {"contracts": [contract.to_dict() for contract in contracts]}
