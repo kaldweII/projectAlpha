@@ -40,8 +40,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
-      <SideNav/>
+ 
       <Switch>
         <Route path='/login' exact={true}>
           <LoginPage />
@@ -50,21 +49,33 @@ function App() {
           <SignUpForm />
         </Route>
         <ProtectedRoute path='/customers' exact={true} >
+          <NavBar />
+          <SideNav />
           <ManageCustomers />
         </ProtectedRoute>
         <ProtectedRoute path='/contacts' exact={true} >
+          <NavBar />
+          <SideNav />
           <ManageContacts/>
         </ProtectedRoute>
         <ProtectedRoute path='/contracts' exact={true} >
+          <NavBar />
+          <SideNav />
           <ManageContracts />
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
+          <NavBar />
+          <SideNav />
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
+          <NavBar />
+          <SideNav />
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
+          <NavBar />
+          <SideNav />
           <Dashboard/>
         </ProtectedRoute>
       </Switch>
