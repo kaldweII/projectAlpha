@@ -53,6 +53,7 @@ display: flex;
         text-align: center;
         text-decoration: none;
         background-color: transparent;
+        margin-right: 25px;
 }
 
 .logoutButton:hover{

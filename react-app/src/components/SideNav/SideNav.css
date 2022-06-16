@@ -6,11 +6,10 @@
   justify-content: space-between;
   flex-wrap: wrap;
   height: 100vh;
-  width: 15vw;
+  width: 13vw;
   border-right: 1px solid #D7DBDD;
   font-family: raleway;
   background: #306d93;
-  width: 10%;
   position: absolute;
 }
 
@@ -27,12 +26,9 @@
 }
 
 .collapsed-item {
-    background-color: inherit;
-    border: none;
-    padding: 2px 20px;
-    color: white;
-    font-size: 16px;
-    margin-left: 10px;
+   display: flex;
+   flex-direction: column;
+   margin-left: 25px;
 }
 
 .collapsed-item:hover{
@@ -42,3 +38,8 @@
 .section {
   padding: 10px;
 }
+
+.active{
+  color: #fcec83;
+}
+
