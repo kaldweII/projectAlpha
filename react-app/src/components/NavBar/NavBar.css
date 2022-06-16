@@ -1,6 +1,5 @@
 .navBar {
-    background-color: #306d93;
-
+    background: #295f81;
 }
 
 .navList{
@@ -45,6 +44,6 @@
 } */
 
 .navLink:hover{
-    color: #fcec83;
+    color: #ffd900;
 }
 
