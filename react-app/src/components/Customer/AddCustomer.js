@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button, Modal} from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import * as customerActions from '../../store/customer';
-import './Customer.css'
+import '../View.css'
 
 function AddCustomer() {
     const [show, setShow] = useState(false);
@@ -69,7 +69,7 @@ function AddCustomer() {
     }
 
     return (
-        <div className="addCustomer">
+        <div className="addButton">
             <Button className="" variant="success" onClick={handleShow}>
             Add Customer
             </Button>
