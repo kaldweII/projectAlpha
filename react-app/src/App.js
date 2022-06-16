@@ -41,7 +41,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-      {/* <SideNav/> */}
+      <SideNav/>
       <Switch>
         <Route path='/login' exact={true}>
           <LoginPage />

@@ -34,6 +34,7 @@ function ContractList() {
 
                 </tr>
                 {contracts.map((val, key) => {
+                    
                     return (
                         <tr key={key}>
                             <td><NavLink
@@ -42,7 +43,8 @@ function ContractList() {
                                     "nav-link" + (!isActive ? " unselected" : "")
                                 }
                             >
-                                {val.customer} 
+                                {/* Will need updated when delete crud iss added */}
+                                {customers[val.customer - 1].name} 
                             </NavLink></td>
                             <td>{val.type}</td>
                             <td>{val.start_date}</td>
