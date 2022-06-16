@@ -59,9 +59,9 @@ function AddContract() {
     }
 
     return (
-        <div className="dashTile">
-            <Button className="dashButton" variant="light" onClick={handleShow}>
-                Manage Contracts
+        <div className="addButton">
+            <Button className="" variant="success" onClick={handleShow}>
+                Add Contract
             </Button>
 
             <Modal show={show} onHide={handleClose}>

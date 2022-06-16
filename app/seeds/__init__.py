@@ -2,6 +2,8 @@ from flask.cli import AppGroup
 from .users import seed_users, undo_users
 from .contacts import seed_contacts, undo_contacts
 from .customers import seed_customers, undo_customers
+from .contracts import seed_contracts, undo_contracts
+
 
 
 # Creates a seed group to hold our commands
@@ -14,7 +16,10 @@ seed_commands = AppGroup('seed')
 def seed():
     seed_users(),
     seed_contacts(),
-    seed_customers()
+    seed_customers(),
+    seed_contracts(),
+
+
     # Add other seed functions here
 
 
@@ -23,5 +28,8 @@ def seed():
 def undo():
     undo_users(),
     undo_contacts(),
-    undo_customers
+    undo_customers(),
+    undo_contracts(),
+
+
     # Add other undo functions here

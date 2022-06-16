@@ -19,6 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ManageCustomers from './components/ManageCustomersPage';
 import SideNav from './components/SideNav/index.js';
 import ManageContacts from './components/ManageContactsPage';
+import ManageContracts from './components/ManageContractsPage';
 
 
 
@@ -53,6 +54,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/contacts' exact={true} >
           <ManageContacts/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/contracts' exact={true} >
+          <ManageContracts />
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
