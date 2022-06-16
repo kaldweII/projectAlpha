@@ -3,7 +3,8 @@ import Contract from "../Contract";
 import Role from "../Role";
 import '../View.css'
 import asarLogo from '../../assets/asarLogo.png'
-import ManageCustomers from "../Customer/ManageCustomers";
+import ManageCustomers from "../Customer/ManageCustomersButton";
+import ManageContacts from "../Contact/ManageContactsButton";
 
 function Dashboard(){
 
@@ -15,7 +16,7 @@ function Dashboard(){
             </div>
             <div className="dashboardTiles">
                 <ManageCustomers/>
-                <Contact/>
+                <ManageContacts/>
                 <Contract/>
                 <Role/>
             </div>

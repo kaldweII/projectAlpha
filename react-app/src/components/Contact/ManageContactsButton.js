@@ -1,19 +1,19 @@
 import { NavLink } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
-function ManageCustomers(){
+function ManageContactsButton() {
     return (
         <NavLink
-            to="/customers"
+            to="/contacts"
             className={isActive =>
                 "nav-link" + (!isActive ? " unselected" : "")
             }
         >
             <Button className="dashButton" variant="light">
-                Manage Customers
+                Manage Contacts
             </Button>
         </NavLink>
     )
 }
 
-export default ManageCustomers;
+export default ManageContactsButton;
