@@ -17,7 +17,7 @@ import Dashboard from './components/DashboardPage';
 import { authenticate } from './store/session';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ManageCustomers from './components/ManageCustomersPage';
-
+import SideNav from './components/SideNav/index.js';
 
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
+      {/* <SideNav/> */}
       <Switch>
         <Route path='/login' exact={true}>
           <LoginPage />
