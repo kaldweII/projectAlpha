@@ -69,9 +69,9 @@ function AddContact() {
     }
 
     return (
-        <div className="dashTile">
-            <Button className="dashButton" variant="light" onClick={handleShow}>
-                Manage Contacts
+        <div className="addButton">
+            <Button className="" variant="success" onClick={handleShow}>
+                Add Contact
             </Button>
 
             <Modal show={show} onHide={handleClose}>

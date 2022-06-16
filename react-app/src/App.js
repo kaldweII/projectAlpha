@@ -18,6 +18,8 @@ import { authenticate } from './store/session';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ManageCustomers from './components/ManageCustomersPage';
 import SideNav from './components/SideNav/index.js';
+import ManageContacts from './components/ManageContactsPage';
+
 
 
 function App() {
@@ -48,6 +50,9 @@ function App() {
         </Route>
         <ProtectedRoute path='/customers' exact={true} >
           <ManageCustomers />
+        </ProtectedRoute>
+        <ProtectedRoute path='/contacts' exact={true} >
+          <ManageContacts/>
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>

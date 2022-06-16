@@ -48,5 +48,9 @@ def main():
         db.session.add(new_contact)
         db.session.commit()
         return new_contact.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    elif form.errors:
+        return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    elif request.method == 'GET':
+        contacts = Contact.query.all()
+        return {"contacts": [contact.to_dict() for contact in contacts]}
 

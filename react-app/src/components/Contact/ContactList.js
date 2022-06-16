@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import * as customerActions from '../../store/customer'
+import * as contactActions from '../../store/contact'
 import { useDispatch, useSelector } from 'react-redux';
 import '../View.css'
 
 
 
-function CustomerList() {
-    const customers = useSelector(state => Object.values(state.customers));
+function ContactList() {
+    const contacts = useSelector(state => Object.values(state.contacts));
     const userId = useSelector(state => state.session.user.id)
     const dispatch = useDispatch();
 
 
     useEffect(() => {
-        dispatch(customerActions.getCustomers());
+        dispatch(contactActions.getContacts());
     }, [dispatch, userId]);
 
 
@@ -23,25 +23,30 @@ function CustomerList() {
             <table>
                 <tr>
                     <th>Name</th>
-                    <th>Address</th>
-                    <th>City</th>
-                    <th>State</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>LinkedIn</th>
 
                 </tr>
-                {customers.map((val, key) => {
+                {contacts.map((val, key) => {
                     return (
                         <tr key={key}>
                             <td><NavLink
-                                to={`/customers/${val.id}`}
+                                to={`/contacts/${val.first_name}${val.last_name}`}
                                 className={isActive =>
                                     "nav-link" + (!isActive ? " unselected" : "")
                                 }
                             >
-                                {val.name}
+                                {val.first_name} {val.last_name}
                             </NavLink></td>
-                            <td>{val.address}</td>
-                            <td>{val.city}</td>
-                            <td>{val.state}</td>
+                            <td>{val.email}</td>
+                            <td>{val.mobile_phone_number}</td>
+                            <td><a
+                                href={val.linkedin_url}
+                                target="blank"
+                            >
+                                {val.linkedin_url}
+                            </a></td>
 
                         </tr>
                     )
@@ -51,4 +56,4 @@ function CustomerList() {
     );
 }
 
-export default CustomerList;
+export default ContactList;

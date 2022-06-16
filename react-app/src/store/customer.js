@@ -65,8 +65,8 @@ const customerReducer = (state = initialState, action) => {
     switch (action.type) {
         case LOAD_CUSTOMERS: {
             const newState = {};
-            action.payload.forEach((deck) => {
-            newState[deck.id] = deck;
+            action.payload.forEach((contact) => {
+            newState[contact.id] = contact;
         })
             return newState;
       }
