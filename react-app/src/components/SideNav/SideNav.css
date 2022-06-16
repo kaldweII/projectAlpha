@@ -9,7 +9,7 @@
   width: 13vw;
   border-right: 1px solid #D7DBDD;
   font-family: raleway;
-  background: #306d93;
+  background: #2f6d93;
   position: absolute;
 }
 
@@ -19,20 +19,22 @@
     padding: 10px 20px;
     color: white;
     font-size: 20px;
+    font-weight:bolder;
 }
 
 .item:hover{
-    color: #fcec83;
+    color: #ffd900;
 }
 
 .collapsed-item {
    display: flex;
    flex-direction: column;
-   margin-left: 25px;
+   margin-left: 35px;
+   font-size: 19px;
 }
 
 .collapsed-item:hover{
-    color: #fcec83;
+    color: #ffd900;
 }
 
 .section {
@@ -40,6 +42,6 @@
 }
 
 .active{
-  color: #fcec83;
+  color: #ffd900;
 }
 
