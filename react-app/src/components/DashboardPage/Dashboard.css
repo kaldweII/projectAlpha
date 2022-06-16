@@ -1,12 +1,11 @@
-.dashboard{
-    /* background-color: black; */
+/* .dashboard{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: auto;
     height: 100vh;
     width: 100vw;
-}
+} */
 
 .dashboardTiles{
     display: grid;

@@ -2,9 +2,13 @@ import './SideNav.css';
 import { React, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Collapse } from 'react-bootstrap';
+import { CaretDown, CaretRight } from 'react-bootstrap-icons';
+
 
 function SideNav() {
     const [ open, setOpen ] = useState(false);
+
+    
 
     return (
         <div class="sidebar">
@@ -14,15 +18,21 @@ function SideNav() {
                 aria-controls="example-collapse-text"
                 aria-expanded={open}
             >
-                <button class="item">Items</button>
+                    <button class="item">Navigation <span>{open ? <CaretDown style={{ height: 15 }} /> : <CaretRight style={{ height: 15 }}/>}</span></button>
             </div>
             <Collapse in={open}>
-                <div id="example-collapse-text">
+                <div id="example-collapse-text" className='collapsed-item'>
                 <NavLink className='navLink' to='/' exact={true} activeClassName='active'>
-                    <button class="collapsed-item">Home</button>
+                     Dashboard
                 </NavLink>
-                <NavLink className='navLink' to='/users' exact={true} activeClassName='active'>
-                    <button class="collapsed-item">Users</button>
+                <NavLink className='navLink' to='/customers' exact={true} activeClassName='active'>
+                    Customers
+                </NavLink>
+                <NavLink className='navLink' to='/contacts' exact={true} activeClassName='active'>  
+                    Contacts
+                </NavLink>
+                <NavLink className='navLink' to='/contracts' exact={true} activeClassName='active'>
+                     Contracts
                 </NavLink>
                 </div>
             </Collapse>

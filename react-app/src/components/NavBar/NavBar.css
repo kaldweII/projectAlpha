@@ -7,7 +7,7 @@
     display: flex;
     width: 100%;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     list-style-type: none;
     text-decoration: none;
@@ -18,6 +18,11 @@
 
 .navLink{
     color: white;
+}
+
+.homeLink {
+    color: white;
+    margin-right: 25px;
 }
 
 .navLink:link {
@@ -35,10 +40,11 @@
 }
 
 
-.navLink:active {
-    text-decoration: none;
-}
+/* .navLink:active {
+    text-decoration: red;
+} */
 
 .navLink:hover{
     color: #fcec83;
 }
+
