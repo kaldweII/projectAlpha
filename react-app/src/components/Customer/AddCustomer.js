@@ -69,8 +69,8 @@ function AddCustomer() {
     }
 
     return (
-        <div className="addButton">
-            <Button className="" variant="success" onClick={handleShow}>
+        <div className="">
+            <Button className="addButton" variant="success" onClick={handleShow}>
             Add Customer
             </Button>
 

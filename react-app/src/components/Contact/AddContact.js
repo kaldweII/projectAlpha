@@ -4,6 +4,8 @@ import { Button, Modal, Form } from 'react-bootstrap';
 import { useSelector, useDispatch } from 'react-redux';
 import * as contactActions from '../../store/contact';
 import * as customerActions from '../../store/customer';
+import '../View.css'
+
 
 
 function AddContact() {
@@ -69,8 +71,8 @@ function AddContact() {
     }
 
     return (
-        <div className="addButton">
-            <Button className="" variant="success" onClick={handleShow}>
+        <div className="">
+            <Button className="addButton" variant="success" onClick={handleShow}>
                 Add Contact
             </Button>
 
