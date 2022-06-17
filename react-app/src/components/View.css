@@ -102,4 +102,5 @@ td {}
 
 .addButton {
     margin-top: 25px;
+    min-width: 168px;
 }

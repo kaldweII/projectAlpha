@@ -4,6 +4,7 @@ import { Button, Modal} from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import * as contractActions from '../../store/contract';
 import * as customerActions from '../../store/customer';
+import '../View.css'
 
 function AddContract() {
     const [show, setShow] = useState(false);
@@ -59,8 +60,8 @@ function AddContract() {
     }
 
     return (
-        <div className="addButton">
-            <Button className="" variant="success" onClick={handleShow}>
+        <div className="">
+            <Button className="addButton" variant="success" onClick={handleShow}>
                 Add Contract
             </Button>
 

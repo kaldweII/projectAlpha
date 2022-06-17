@@ -84,6 +84,7 @@ function AddEmployee() {
             <Button className="" variant="success" onClick={handleShow}>
                 Add Employee
             </Button>
+        </div>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
