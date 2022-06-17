@@ -47,9 +47,9 @@ function ContractList() {
                                 {customers[val.customer - 1].name} 
                             </NavLink></td>
                             <td>{val.type}</td>
-                            <td>{Moment(val.start_date).format('MM-DD-YYYY')}</td>
+                            <td>{Moment(val.start_date).utc(false).format('MM-DD-YYYY')}</td>
                             <td>
-                                {Moment(val.est_end_date).format('MM-DD-YYYY')}
+                                {Moment(val.est_end_date).utc(false).format('MM-DD-YYYY')}
                             </td>
 
                         </tr>
