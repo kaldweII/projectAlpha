@@ -6,9 +6,7 @@ import { CaretDown, CaretRight } from 'react-bootstrap-icons';
 
 
 function SideNav() {
-    const [ open, setOpen ] = useState(false);
-
-    
+    const [ open, setOpen ] = useState(true);
 
     return (
         <div class="sidebar">
