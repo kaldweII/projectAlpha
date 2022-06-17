@@ -35,8 +35,6 @@ function ContractList() {
 
                 </tr>
                 {contracts.map((val, key) => {
-                    val.start_date = Moment().format('MM-DD-YYYY');
-                    val.est_end_date = Moment().format('MM-DD-YYYY');
                     return (
                         <tr key={key}>
                             <td><NavLink
@@ -49,9 +47,9 @@ function ContractList() {
                                 {customers[val.customer - 1].name} 
                             </NavLink></td>
                             <td>{val.type}</td>
-                            <td>{val.start_date}</td>
+                            <td>{Moment(val.start_date).format('MM-DD-YYYY')}</td>
                             <td>
-                                {val.est_end_date}
+                                {Moment(val.est_end_date).format('MM-DD-YYYY')}
                             </td>
 
                         </tr>
