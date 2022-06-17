@@ -7,16 +7,12 @@ import NavBar from './components/NavBar/index.js';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
-import Role from './components/Role';
-import Customer from './components/Customer';
-import AddCustomer from './components/Customer/AddCustomer';
-import Contact from './components/Contact';
-import Contract from './components/Contract';
 import LoginPage from './components/LoginPage';
 import Dashboard from './components/DashboardPage';
 import { authenticate } from './store/session';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ManageCustomers from './components/ManageCustomersPage';
+import ManageEmployees from './components/ManageEmployeesPage';
 import SideNav from './components/SideNav/index.js';
 import ManageContacts from './components/ManageContactsPage';
 import ManageContracts from './components/ManageContractsPage';
@@ -62,6 +58,11 @@ function App() {
           <NavBar />
           <SideNav />
           <ManageContracts />
+        </ProtectedRoute>
+        <ProtectedRoute path='/employees' exact={true} >
+          <NavBar />
+          <SideNav />
+          <ManageEmployees />
         </ProtectedRoute>
         <ProtectedRoute path='/users' exact={true} >
           <NavBar />

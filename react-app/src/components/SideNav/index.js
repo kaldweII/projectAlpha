@@ -34,6 +34,9 @@ function SideNav() {
                 <NavLink className='navLink' to='/contracts' exact={true} activeClassName='active'>
                      Contracts
                 </NavLink>
+                <NavLink className='navLink' to='/employees' exact={true} activeClassName='active'>
+                    Employees
+                </NavLink>
                 </div>
             </Collapse>
             </div>

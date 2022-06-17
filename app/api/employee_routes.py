@@ -1,9 +1,9 @@
 from itertools import count
 from flask import Blueprint, jsonify, session, request
-from app.models import Role, db
-from app.forms import RolesForm
+from app.models import Employee, db
+from app.forms import EmployeesForm
 
-role_routes = Blueprint('roles', __name__)
+employee_routes = Blueprint('employees', __name__)
 
 def validation_errors_to_error_messages(validation_errors):
     """
@@ -15,12 +15,12 @@ def validation_errors_to_error_messages(validation_errors):
             errorMessages.append(f'{error}')
     return errorMessages
 
-@role_routes.route('/', methods=['POST', 'GET'])
+@employee_routes.route('/', methods=['POST', 'GET'])
 def main():
     """
-    Creates a new role
+    Creates a new employee
     """
-    form = RolesForm()
+    form = EmployeesForm()
     form['csrf_token'].data = request.cookies['csrf_token']
  
  
@@ -47,7 +47,7 @@ def main():
         hourly_rate=form.data['hourly_rate'],
         rating=form.data['rating'],
 
-        new_role = Role(
+        new_employee = Employee(
             first_name=first_name, last_name=last_name, alias=alias,role=role, 
             country_code=country_code,phone_number=phone_number, email=email, linkedin_url=linkedin_url,
             availability=availability, address=address, city=city, state=state, country=country, zipcode=zipcode,
@@ -55,7 +55,11 @@ def main():
             working_status=working_status, recruiter_name=recruiter_name, hourly_rate=hourly_rate, rating=rating,
         )
     
-        db.session.add(new_role)
+        db.session.add(new_employee)
         db.session.commit()
-        return new_role.to_dict()
-    return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+        return new_employee.to_dict()
+    elif form.errors:
+            return {'errors': validation_errors_to_error_messages(form.errors)}, 401
+    elif request.method == 'GET':
+        employees = Employee.query.all()
+        return {"employees": [employee.to_dict() for employee in employees]}
