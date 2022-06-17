@@ -11,7 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.customer_routes import customer_routes
 from .api.contact_routes import contact_routes
 from .api.contract_routes import contract_routes
-from .api.role_routes import role_routes
+from .api.employee_routes import employee_routes
 
 from .seeds import seed_commands
 
@@ -38,7 +38,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(customer_routes, url_prefix='/api/customers')
 app.register_blueprint(contact_routes, url_prefix='/api/contacts')
 app.register_blueprint(contract_routes, url_prefix='/api/contracts')
-app.register_blueprint(role_routes, url_prefix='/api/roles')
+app.register_blueprint(employee_routes, url_prefix='/api/employees')
 
 
 db.init_app(app)

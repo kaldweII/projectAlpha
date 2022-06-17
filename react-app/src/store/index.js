@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import customerReducer from './customer';
 import contactReducer from './contact';
 import contractReducer from './contract';
+import employeeReducer from './employee';
 
 import session from './session'
 
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   customers: customerReducer,
   contacts: contactReducer,
   contracts: contractReducer,
+  employees: employeeReducer,
 
 
 });

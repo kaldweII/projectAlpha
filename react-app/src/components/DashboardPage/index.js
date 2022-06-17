@@ -1,9 +1,9 @@
-import Role from "../Role";
 import '../View.css'
 import asarLogo from '../../assets/asarLogo.png'
 import ManageCustomers from "../Customer/ManageCustomersButton";
 import ManageContactsButton from "../Contact/ManageContactsButton";
 import ManageContractsButton from "../Contract/ManageContractButton";
+import ManageEmployeesButton from '../Employee/ManageEmployeesButton';
 function Dashboard(){
 
     return(
@@ -16,7 +16,7 @@ function Dashboard(){
                 <ManageCustomers/>
                 <ManageContactsButton/>
                 <ManageContractsButton/>
-                <Role/>
+                <ManageEmployeesButton/>
             </div>
             <img className='companyLogo' src={asarLogo}></img>
         </div>

@@ -3,8 +3,8 @@ from flask_login import UserMixin
 from sqlalchemy.sql import func
 
 
-class Role(db.Model, UserMixin):
-    __tablename__ = 'roles'
+class Employee(db.Model, UserMixin):
+    __tablename__ = 'employees'
 
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(255), nullable=True)

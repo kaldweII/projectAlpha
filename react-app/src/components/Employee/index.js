@@ -1,17 +1,17 @@
 import {useState} from 'react';
 import {Button, Modal, Form} from 'react-bootstrap';
-import AddRole from './AddRole';
+import AddEmployee from './AddEmployee';
 
 
-function Role() {
+function Employee() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     return (
-        <AddRole/>
+        <AddEmployee/>
     );
 }
 
-export default Role;
+export default Employee;

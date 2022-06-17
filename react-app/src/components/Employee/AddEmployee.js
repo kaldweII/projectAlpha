@@ -1,10 +1,13 @@
-import './AddRole.css';
+import './AddEmployee.css';
 import { useState } from 'react';
 import { Button, Modal} from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import * as roleActions from '../../store/role';
+import * as employeeActions from '../../store/employee';
+import '../View.css'
 
-function AddRole() {
+
+
+function AddEmployee() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -40,13 +43,13 @@ function AddRole() {
         e.preventDefault();
         setErrors([]);
 
-        const newRole = {
+        const newEmployee = {
             first_name, last_name, alias, role, country_code, phone_number, email, linkedin_url, availability, address, city, state, country,
             zipcode, direct_report, employment_start, employment_end, working_status, recruiter_name, hourly_rate, rating
         }
 
         // Run request. // MODIFY FOR ROLES ROUTE
-        const data = dispatch(roleActions.addRole(newRole));
+        const data = dispatch(employeeActions.addEmployee(newEmployee));
 
         // Close the modal and reset form state.
         handleClose();
@@ -77,17 +80,17 @@ function AddRole() {
     }
 
     return (
-        <div className="dashTile">
-            <Button className="dashButton" variant="light" onClick={handleShow}>
-                Manage Roles
+        <div className="addButton">
+            <Button className="" variant="success" onClick={handleShow}>
+                Manage Employees
             </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add Role</Modal.Title>
+                    <Modal.Title>Add Employee</Modal.Title>
                 </Modal.Header>
-                <Modal.Body className='rolesModalBody'>
-                    <form onSubmit={handleSubmit} id='rolesForm' className='rolesForm'>     
+                <Modal.Body className='employeesModalBody'>
+                    <form onSubmit={handleSubmit} id='employeesForm' className='employeesForm'>     
                         <div className='formInput'>
                             <label htmlFor='first_name'></label>
                             <input 
@@ -344,7 +347,7 @@ function AddRole() {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" type='submit' form='rolesForm'>
+                    <Button variant="primary" type='submit' form='employeesForm'>
                         Save Changes
                     </Button>
                 </Modal.Footer>
@@ -353,4 +356,4 @@ function AddRole() {
     );
 }
 
-export default AddRole;
+export default AddEmployee;

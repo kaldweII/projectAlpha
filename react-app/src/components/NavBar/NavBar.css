@@ -24,6 +24,10 @@
     margin-right: 25px;
 }
 
+.homeLink:hover {
+    color: #ffd900;
+}
+
 .navLink:link {
     text-decoration: none;
 }
@@ -45,5 +49,6 @@
 
 .navLink:hover{
     color: #ffd900;
+    
 }
 
