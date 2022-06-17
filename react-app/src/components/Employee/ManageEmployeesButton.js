@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 function ManageEmployeesButton() {
     return (
         <NavLink
-            to="/employees"
+            to="/" // route: /employees
             className={isActive =>
                 "nav-link" + (!isActive ? " unselected" : "")
             }
