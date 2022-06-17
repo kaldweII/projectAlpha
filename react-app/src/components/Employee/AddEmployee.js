@@ -80,10 +80,11 @@ function AddEmployee() {
     }
 
     return (
-        <div className="">
-            <Button className="addButton" variant="success" onClick={handleShow}>
-                Manage Employees
+        <div className="addButton">
+            <Button className="" variant="success" onClick={handleShow}>
+                Add Employee
             </Button>
+        </div>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
