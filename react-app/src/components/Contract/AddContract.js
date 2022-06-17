@@ -86,16 +86,11 @@ function AddContract() {
                             </select>
                         </div>
                         <div className='formInput'>
-                            <label htmlFor='type'></label>
-                            <input 
-                            className='input'
-                            name='type'
-                            type='text'
-                            placeholder='Type*'
-                            value={type}
-                            onChange={e => setType(e.target.value)}
-                            required
-                            />
+                            <select className="input" name="customerSelect" id="customerSelect" onChange={e => setType(e.target.value)} required>
+                                <option value={null} disabled selected>Select a Type*</option>
+                                <option value="Fixed Fee">Fixed Fee</option>
+                                <option value="Time & Expense">Time & Expense</option>
+                            </select>
                         </div>
                         <div className='formInput'>
                             <label htmlFor='description'></label>
