@@ -82,7 +82,7 @@ function AddEmployee() {
     return (
         <div className="addButton">
             <Button className="" variant="success" onClick={handleShow}>
-                Manage Employees
+                Add Employee
             </Button>
 
             <Modal show={show} onHide={handleClose}>
