@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import Moment from 'moment';
 import * as contractActions from '../../store/contract'
 import * as customerActions from '../../store/customer'
 
@@ -34,7 +35,6 @@ function ContractList() {
 
                 </tr>
                 {contracts.map((val, key) => {
-                    
                     return (
                         <tr key={key}>
                             <td><NavLink
@@ -47,9 +47,9 @@ function ContractList() {
                                 {customers[val.customer - 1].name} 
                             </NavLink></td>
                             <td>{val.type}</td>
-                            <td>{val.start_date}</td>
+                            <td>{Moment(val.start_date).format('MM-DD-YYYY')}</td>
                             <td>
-                                {val.est_end_date}
+                                {Moment(val.est_end_date).format('MM-DD-YYYY')}
                             </td>
 
                         </tr>
