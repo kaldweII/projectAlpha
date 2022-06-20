@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './auth.css'
+import ReCAPTCHA from 'react-google-recaptcha';
+
 
 
 const SignUpForm = () => {
@@ -23,6 +25,10 @@ const SignUpForm = () => {
       }
     }
   };
+
+  function onChange(value) {
+    console.log('Captcha value:', value);}
+
 
   const updateRole = (e) => {
     setRole(e.target.value);
@@ -95,6 +101,13 @@ const SignUpForm = () => {
         ></input>
       </div>
       <button type='submit'>Sign Up</button>
+      <div className="App">
+        <ReCAPTCHA
+          sitekey='6LdoDIcgAAAAAIlgr26T3uGl6lUi6InTfLibkv2-
+'
+          onChange={onChange}
+        />
+      </div>
     </form>
   );
 };
