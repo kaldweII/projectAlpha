@@ -26,7 +26,7 @@ function User() {
         <strong>User Id</strong> {userId}
       </li>
       <li>
-        <strong>Username</strong> {user.username}
+        <strong>Role</strong> {user.role}
       </li>
       <li>
         <strong>Email</strong> {user.email}
