@@ -12,7 +12,7 @@ function LoginPage(){
             <div className='img'></div>
             <h1 className='loginWelcome'>Welcome to ASARᴴᴿ</h1>
             <h3 className='loginSubWelcome'>Log in to access your account</h3>
-
+            <p className='loginSubWelcome'>Are you a contractor? Click <a href='/sign-up'>here</a> to sign up.</p>
         </div>
     )
 }

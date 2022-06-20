@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 import './auth.css';
-import { Button, Modal, Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 
 const LoginForm = () => {

@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import LoginForm from './components/auth/LoginForm';
-import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar/index.js';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import LoginPage from './components/LoginPage';
+import SignUpPage from './components/SignUpPage';
 import Dashboard from './components/DashboardPage';
 import { authenticate } from './store/session';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,13 +35,12 @@ function App() {
 
   return (
     <BrowserRouter>
- 
       <Switch>
         <Route path='/login' exact={true}>
           <LoginPage />
         </Route>
         <Route path='/sign-up' exact={true}>
-          <SignUpForm />
+          <SignUpPage />
         </Route>
         <ProtectedRoute path='/customers' exact={true} >
           <NavBar />

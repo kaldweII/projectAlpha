@@ -1,24 +1,18 @@
-
-
 .loginForm {
-     /* background-color: #306d93; */
- backdrop-filter: blur(5px);
-margin: auto;    
-display: flex;
+    backdrop-filter: blur(5px);
+    margin: auto;    
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     min-width: 333px;
-        min-height: 250px;
-
+    min-height: 250px;
     border-radius: 10px;
-
     position: fixed;
-        top: 50%;
-        left: 17.5%;
-        transform: translate(-50%, -50%);
-
+    top: 50%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
 }
 
 .formInput{
@@ -42,7 +36,19 @@ display: flex;
         display: inline-block;
         font-size: 16px;
         border-radius: 25px;
+}
 
+.signUpButton{
+    background-color: #2a915a;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 5px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 25px;
 }
 
 .input{
@@ -63,17 +69,18 @@ display: flex;
 }
 
 .signUpForm{
-    margin: auto;
-    width: 50%;
-    border: 3px solid green;
-    padding: 10px;
+    backdrop-filter: blur(5px);
+    margin: auto;    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: ;
-    min-height: 400px;
-    
-
-
+    color: white;
+    min-width: 333px;
+    min-height: 250px;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 17.5%;
+    transform: translate(-50%, -50%);
 }

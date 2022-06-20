@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
+import { Button } from 'react-bootstrap';
 import './auth.css'
 import ReCAPTCHA from 'react-google-recaptcha';
-
 
 
 const SignUpForm = () => {
@@ -52,14 +52,7 @@ const SignUpForm = () => {
 
   return (
     <form onSubmit={onSignUp} className='signUpForm' >
-      <div>
-      Sign Up</div>
-      <div>
-        {errors.map((error, ind) => (
-          <div key={ind}>{error}</div>
-        ))}
-      </div>
-      <div>
+      {/* <div className='formInput'>
         <label></label>
         <input
           type='text'
@@ -68,8 +61,8 @@ const SignUpForm = () => {
           onChange={updateRole}
           value={role}
         ></input>
-      </div>
-      <div>
+      </div> */}
+      <div className='formInput'>
         <label></label>
         <input
           type='text'
@@ -77,9 +70,10 @@ const SignUpForm = () => {
           placeholder='Email'
           onChange={updateEmail}
           value={email}
+          required
         ></input>
       </div>
-      <div>
+      <div className='formInput'>
         <label></label>
         <input
           type='password'
@@ -87,9 +81,10 @@ const SignUpForm = () => {
           placeholder='Password'
           onChange={updatePassword}
           value={password}
+          required
         ></input>
       </div>
-      <div>
+      <div className='formInput'>
         <label></label>
         <input
           type='password'
@@ -100,11 +95,16 @@ const SignUpForm = () => {
           required={true}
         ></input>
       </div>
+      <Button className='signUpButton' variant='success' type='submit'>Sign Up</Button>
+      <div className='loginErrors'>
+        {errors.map((error, ind) => (
+          <div key={ind}>{error}</div>
+        ))}
+
       <button type='submit'>Sign Up</button>
       <div className="App">
         <ReCAPTCHA
-          sitekey='6LdoDIcgAAAAAIlgr26T3uGl6lUi6InTfLibkv2-
-'
+          sitekey='6LdoDIcgAAAAAIlgr26T3uGl6lUi6InTfLibkv2-'
           onChange={onChange}
         />
       </div>
