@@ -7,7 +7,7 @@ import './auth.css'
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
-  const [username, setUsername] = useState('');
+  const [role, setRole] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
@@ -17,15 +17,15 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(role, email, password));
       if (data) {
         setErrors(data)
       }
     }
   };
 
-  const updateUsername = (e) => {
-    setUsername(e.target.value);
+  const updateRole = (e) => {
+    setRole(e.target.value);
   };
 
   const updateEmail = (e) => {
@@ -47,6 +47,8 @@ const SignUpForm = () => {
   return (
     <form onSubmit={onSignUp} className='signUpForm' >
       <div>
+      Sign Up</div>
+      <div>
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
@@ -55,10 +57,10 @@ const SignUpForm = () => {
         <label></label>
         <input
           type='text'
-          name='username'
-          placeholder='User Name'
-          onChange={updateUsername}
-          value={username}
+          name='role'
+          placeholder='Role'
+          onChange={updateRole}
+          value={role}
         ></input>
       </div>
       <div>
