@@ -27,28 +27,28 @@
 
 .loginButton{
     background-color: #2a915a;
-        /* Green */
-        border: none;
-        color: white;
-        padding: 5px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        border-radius: 25px;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
 }
 
 .signUpButton{
     background-color: #2a915a;
-        /* Green */
-        border: none;
-        color: white;
-        padding: 5px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        border-radius: 25px;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
 }
 
 .input{
@@ -56,12 +56,12 @@
 }
 
 .logoutButton{
-        border: none;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        background-color: transparent;
-        margin-right: 25px;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    margin-right: 25px;
 }
 
 .logoutButton:hover{
@@ -83,4 +83,8 @@
     top: 50%;
     left: 17.5%;
     transform: translate(-50%, -50%);
+}
+
+.emailInput {
+    margin-top: 50px;
 }

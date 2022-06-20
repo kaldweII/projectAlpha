@@ -9,7 +9,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
-  const [role, setRole] = useState('');
+  const [role, setRole] = useState('contractor');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
@@ -62,7 +62,7 @@ const SignUpForm = () => {
           value={role}
         ></input>
       </div> */}
-      <div className='formInput'>
+      <div className='formInput emailInput'>
         <label></label>
         <input
           type='text'
@@ -100,8 +100,7 @@ const SignUpForm = () => {
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
-
-      <button type='submit'>Sign Up</button>
+      </div>
       <div className="App">
         <ReCAPTCHA
           sitekey='6LdoDIcgAAAAAIlgr26T3uGl6lUi6InTfLibkv2-'
