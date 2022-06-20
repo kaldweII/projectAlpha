@@ -1,0 +1,33 @@
+.img{
+background: url(../../assets/LoginArt.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    margin-left: 35%;
+    min-width: 50%;
+    min-height: 50%;
+    z-index: -8;
+}
+
+.signupWelcome{
+  
+        color: black;
+        font-size: 300%;
+        margin-top: 5%;
+        margin-left: 4%;
+
+}
+
+.signupSubWelcome{
+
+        color: black;
+            margin-left: 4%;
+}
