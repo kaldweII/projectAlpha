@@ -4,6 +4,8 @@ import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import { Button } from 'react-bootstrap';
 import './auth.css'
+import ReCAPTCHA from 'react-google-recaptcha';
+
 
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
@@ -23,6 +25,10 @@ const SignUpForm = () => {
       }
     }
   };
+
+  function onChange(value) {
+    console.log('Captcha value:', value);}
+
 
   const updateRole = (e) => {
     setRole(e.target.value);
@@ -94,6 +100,13 @@ const SignUpForm = () => {
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
+
+      <button type='submit'>Sign Up</button>
+      <div className="App">
+        <ReCAPTCHA
+          sitekey='6LdoDIcgAAAAAIlgr26T3uGl6lUi6InTfLibkv2-'
+          onChange={onChange}
+        />
       </div>
     </form>
   );
