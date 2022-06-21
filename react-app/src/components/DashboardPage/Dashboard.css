@@ -75,3 +75,20 @@
     height: 50px;
     width: auto;
 }
+
+.employeeInfo{
+    margin-top: 50px;
+}
+
+.employeeField{
+    color: blue;
+}
+
+.profilePhoto{
+    border: 3px solid black;
+    text-align: center;
+    height: 300px;
+    width: auto;
+    margin-bottom: 50px;
+
+}
