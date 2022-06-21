@@ -4,34 +4,29 @@ import ManageCustomers from "../Customer/ManageCustomersButton";
 import ManageContactsButton from "../Contact/ManageContactsButton";
 import ManageContractsButton from "../Contract/ManageContractButton";
 import ManageEmployeesButton from '../Employee/ManageEmployeesButton';
+import Contractor from '../Contractor';
 import { useSelector } from 'react-redux';
+
 function Dashboard(){
+    const userRole = useSelector(state => state.session.user.role)
 
-    
-    const userRole = useSelector(state => state.session.user.role) //change to role
-
-    if(userRole === 'contractor'){
+    if (userRole === 'contractor') {
         return(
             <div className="dashboard">
                 <div className="dashBkg"></div>
                 <div className="dashHeaderContainer">
                     <h1 className="dashHeading">Dashboard</h1>
                 </div>
-                <div className="dashboardTiles">
-                    <ManageCustomers />
+                <div className="">
+                    <Contractor/>
                 </div>
                 <img className='companyLogo' src={asarLogo}></img>
             </div>
-
         )
-
     }
 
-    else{
-
+    else {
         return(
-    
-    
             <div className="dashboard">
                 <div className="dashBkg"></div>
                 <div className="dashHeaderContainer">

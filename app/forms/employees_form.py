@@ -3,6 +3,7 @@ from wtforms import StringField
 from wtforms.validators import DataRequired
 
 class EmployeesForm(FlaskForm):
+    id = StringField('id', validators=[DataRequired()])
     first_name = StringField('first_name', validators=[DataRequired()])
     last_name = StringField('last_name', validators=[DataRequired()])
     alias = StringField('alias')
