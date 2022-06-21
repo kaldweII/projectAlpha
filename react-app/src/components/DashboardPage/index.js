@@ -64,7 +64,7 @@ function Dashboard(){
                     <div><span className='employeeField'>Phone:</span> {employee.country_code}{employee.phone_number} </div>
                     <div><span className='employeeField'>Email:</span> {employee.email} </div>
                     <div><span className='employeeField'>Availability:</span> {employee.availability} </div>
-                    <div><span className='employeeField'>Address:</span> {employee.address} {employee.city}, {employee.state} {employee.country} {employee.zipcode}</div>
+                    <div><span className='employeeField'>Address:</span> {employee.address}, {employee.city}, {employee.state} {employee.zipcode}, {employee.country}</div>
 
                 </div>
                 <img className='companyLogo' src={asarLogo}></img>
