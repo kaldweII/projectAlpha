@@ -101,3 +101,10 @@ th {
     margin-top: 25px;
     min-width: 168px;
 }
+
+.notAuthorized {
+    font-weight: bold;
+    font-size: 30px;
+    color: red;
+    transform: translate(0, 5%);
+}
