@@ -2,6 +2,7 @@ const ADD_EMPLOYEE = 'ADD_EMPLOYEE'
 const LOAD_EMPLOYEES = 'LOAD_EMPLOYEES';
 
 
+
 // ACTIONS
 
 export const loadEmployees = employees => {
@@ -29,6 +30,9 @@ export const getEmployees = () => async (dispatch) => {
     }
 }
 
+
+
+
 export const addEmployee = (payload) => async (dispatch) => {
     const res = await fetch('/api/employees/', {
         method: 'POST',
@@ -43,6 +47,14 @@ export const addEmployee = (payload) => async (dispatch) => {
         dispatch(addNewEmployee(data));
     } else return data;
 }
+
+
+
+
+
+
+
+
 
 const initialState = {};
 
