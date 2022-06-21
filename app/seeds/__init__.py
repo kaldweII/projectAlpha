@@ -3,7 +3,6 @@ from .users import seed_users, undo_users
 from .contacts import seed_contacts, undo_contacts
 from .customers import seed_customers, undo_customers
 from .contracts import seed_contracts, undo_contracts
-from .employees import seed_employees, undo_employees
 
 
 
@@ -19,7 +18,6 @@ def seed():
     seed_contacts(),
     seed_customers(),
     seed_contracts(),
-    seed_employees(),
 
 
     # Add other seed functions here
@@ -32,7 +30,6 @@ def undo():
     undo_contacts(),
     undo_customers(),
     undo_contracts(),
-    undo_employees(),
 
 
     # Add other undo functions here
