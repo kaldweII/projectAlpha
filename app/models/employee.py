@@ -6,7 +6,7 @@ from sqlalchemy.sql import func
 class Employee(db.Model, UserMixin):
     __tablename__ = 'employees'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
     first_name = db.Column(db.String(255), nullable=True)
     last_name = db.Column(db.String(255), nullable=False)
     alias = db.Column(db.String(255), nullable=True)
