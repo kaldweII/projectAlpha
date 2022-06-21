@@ -23,8 +23,8 @@ def main():
     form = EmployeesForm()
     form['csrf_token'].data = request.cookies['csrf_token']
  
- 
     if form.validate_on_submit():
+        id=form.data['id'],
         first_name=form.data['first_name'],
         last_name=form.data['last_name'],
         alias=form.data['alias'],
@@ -48,7 +48,7 @@ def main():
         rating=form.data['rating'],
 
         new_employee = Employee(
-            first_name=first_name, last_name=last_name, alias=alias,role=role, 
+            id=id, first_name=first_name, last_name=last_name, alias=alias, role=role, 
             country_code=country_code,phone_number=phone_number, email=email, linkedin_url=linkedin_url,
             availability=availability, address=address, city=city, state=state, country=country, zipcode=zipcode,
             direct_report=direct_report, employment_start=employment_start, employment_end=employment_end,
